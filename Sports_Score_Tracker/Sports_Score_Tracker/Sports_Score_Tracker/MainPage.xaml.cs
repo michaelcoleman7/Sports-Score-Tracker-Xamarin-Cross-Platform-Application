@@ -17,9 +17,8 @@ namespace Sports_Score_Tracker
 
         private void SetupDefaults()
         {
+            //Setup paths for image sources
             var assembly = typeof(MainPage);
-            //string backgroundImgPath = "Sports_Score_Tracker.Assets.Images.background.jpg";
-            //backGrdImg.Source = ImageSource.FromResource(backgroundImgPath, assembly);
 
             string soccerImgPath = "Sports_Score_Tracker.Assets.Images.soccer.jpg";
             imgSoccer.Source = ImageSource.FromResource(soccerImgPath, assembly);
@@ -38,6 +37,7 @@ namespace Sports_Score_Tracker
 
             string rugbyImgPath = "Sports_Score_Tracker.Assets.Images.rugby.jpg";
             imgRugby.Source = ImageSource.FromResource(rugbyImgPath, assembly);
+
         }
     }
 }
