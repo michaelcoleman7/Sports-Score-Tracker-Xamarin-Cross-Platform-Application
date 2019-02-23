@@ -20,7 +20,14 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
+        
+        <Label Text="Sports Score Tracker" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+        <Image x:Name="imgSoccer" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="1"></Image>
+        <Image x:Name="imgBasketball" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="3"></Image>
+        <Image x:Name="imgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1"></Image>
+        <Image x:Name="imgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3"></Image>
+        <Image x:Name="imgGaa" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="1"></Image>
+        <Image x:Name="imgRugby" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="3"></Image>
     </Grid>
 
 </ContentPage>
