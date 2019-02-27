@@ -39,5 +39,11 @@ namespace Sports_Score_Tracker
             imgRugby.Source = ImageSource.FromResource(rugbyImgPath, assembly);
 
         }
+
+        private void ImgSoccer_Tapped(object sender, EventArgs e)
+        {
+            //naviage to the Soccer.xaml page
+            Navigation.PushModalAsync(new Soccer());
+        }
     }
 }
