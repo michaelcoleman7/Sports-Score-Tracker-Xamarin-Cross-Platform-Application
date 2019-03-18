@@ -15,15 +15,12 @@ namespace Sports_Score_Tracker
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Soccer : ContentPage
 	{
-        private ISimpleAudioPlayer _simpleAudioPlayer;
+        private ISimpleAudioPlayer audioPlayer;
         List<SoccerClass> soccerList = new List<SoccerClass>();
 
         public Soccer ()
 		{
 			InitializeComponent ();
-            _simpleAudioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-            Stream beepStream = GetType().Assembly.GetManifestResourceStream("Sports_Score_Tracker.AudioFiles.fulltime.mp3");
-            bool isSuccess = _simpleAudioPlayer.Load(beepStream);
         }
 
         private void AddHome_Clicked(object sender, EventArgs e)
@@ -47,7 +44,12 @@ namespace Sports_Score_Tracker
             SoccerClass s = new SoccerClass(homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
             soccerList.Add(s);
             SoccerClass.SaveSoccerDataToFile(soccerList);
-            _simpleAudioPlayer.Play();
+
+            //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
+            audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            Stream audioStream = GetType().Assembly.GetManifestResourceStream("Sports_Score_Tracker.AudioFiles.fulltime.mp3");
+            bool isSuccess = audioPlayer.Load(audioStream);
+            audioPlayer.Play();
         }
     }
 }
