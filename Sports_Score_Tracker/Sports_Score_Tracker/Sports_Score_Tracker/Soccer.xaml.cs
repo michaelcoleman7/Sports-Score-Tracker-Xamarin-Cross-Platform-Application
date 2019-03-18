@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SoccerClassNamespace;
 
 namespace Sports_Score_Tracker
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Soccer : ContentPage
 	{
-		public Soccer ()
+        List<SoccerClass> soccerList = new List<SoccerClass>();
+
+        public Soccer ()
 		{
 			InitializeComponent ();
 		}
@@ -31,6 +34,14 @@ namespace Sports_Score_Tracker
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 1;
             awayScore.Text = addscore.ToString();
+        }
+
+        private void SaveGame_Clicked(object sender, EventArgs e)
+        {
+            SoccerClass s = new SoccerClass(homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
+            s.HomeScore = "1";
+            soccerList.Add(s);
+            SoccerClass.SaveSoccerDataToFile(soccerList);
         }
     }
 }
