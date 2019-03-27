@@ -40,10 +40,10 @@ namespace Sports_Score_Tracker
 
         }
 
-        private void ImgSoccer_Tapped(object sender, EventArgs e)
+        private async void ImgSoccer_Tapped(object sender, EventArgs e)
         {
             //naviage to the Soccer.xaml page
-            Navigation.PushModalAsync(new Soccer());
+            await Navigation.PushAsync(new Soccer());
         }
     }
 }

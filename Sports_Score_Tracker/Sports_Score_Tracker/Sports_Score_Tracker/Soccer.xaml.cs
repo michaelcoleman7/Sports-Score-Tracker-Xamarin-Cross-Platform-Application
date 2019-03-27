@@ -21,6 +21,7 @@ namespace Sports_Score_Tracker
         public Soccer ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void AddHome_Clicked(object sender, EventArgs e)
