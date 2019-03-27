@@ -1,26 +1,26 @@
-﻿using System;
+﻿using Plugin.SimpleAudioPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ScoreTracker.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SoccerClassNamespace;
-using Plugin.SimpleAudioPlayer;
 using System.IO;
 
-namespace Sports_Score_Tracker
+namespace ScoreTracker
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Soccer : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Soccer : ContentPage
+    {
         private ISimpleAudioPlayer audioPlayer;
         List<SoccerClass> soccerList = new List<SoccerClass>();
 
-        public Soccer ()
-		{
-			InitializeComponent ();
+        public Soccer()
+        {
+            InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -48,7 +48,7 @@ namespace Sports_Score_Tracker
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
             audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-            Stream audioStream = GetType().Assembly.GetManifestResourceStream("Sports_Score_Tracker.AudioFiles.fulltime.mp3");
+            Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.fulltime.mp3");
             bool isSuccess = audioPlayer.Load(audioStream);
             audioPlayer.Play();
         }

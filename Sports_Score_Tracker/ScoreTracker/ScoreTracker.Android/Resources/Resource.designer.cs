@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Sports_Score_Tracker.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("ScoreTracker.Droid.Resource", IsApplication=true)]
 
-namespace Sports_Score_Tracker.Droid
+namespace ScoreTracker.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace Sports_Score_Tracker.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Sports_Score_Tracker.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::ScoreTracker.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

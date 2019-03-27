@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F51F6EFE-A089-451C-8836-0062180E3616}</ProjectGuid>
+    <ProjectGuid>{781F0EC8-2D6F-441E-AA5F-3FCAF1E45DBC}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Sports_Score_Tracker.Droid</RootNamespace>
-    <AssemblyName>Sports_Score_Tracker.Android</AssemblyName>
+    <RootNamespace>ScoreTracker.Droid</RootNamespace>
+    <AssemblyName>ScoreTracker.Android</AssemblyName>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -92,9 +92,9 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sports_Score_Tracker\Sports_Score_Tracker.csproj">
-      <Project>{ECB6014F-2E30-4295-BA84-7B3B76B0E684}</Project>
-      <Name>Sports_Score_Tracker</Name>
+    <ProjectReference Include="..\ScoreTracker\ScoreTracker.csproj">
+      <Project>{F01E6F9D-7350-428D-9352-E6A01A1F24B2}</Project>
+      <Name>ScoreTracker</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

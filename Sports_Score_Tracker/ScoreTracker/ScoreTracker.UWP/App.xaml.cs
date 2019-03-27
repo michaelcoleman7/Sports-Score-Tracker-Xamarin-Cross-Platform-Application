@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Sports_Score_Tracker.UWP
+namespace ScoreTracker.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

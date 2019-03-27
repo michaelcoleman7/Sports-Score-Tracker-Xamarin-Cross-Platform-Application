@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="6e0653b7-456f-4532-a382-2d84f97d9307"
-    Publisher="CN=d24cd127-c559-40bf-828e-5b5bd5d62f2a"
+    Name="1e53baff-8fa3-42a8-8cd6-c619488e4c6a"
+    Publisher="CN=a7a0519a-c792-498d-b6b7-225725c991ce"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Sports_Score_Tracker.UWP</DisplayName>
-    <PublisherDisplayName>d24cd127-c559-40bf-828e-5b5bd5d62f2a</PublisherDisplayName>
+    <DisplayName>ScoreTracker.UWP</DisplayName>
+    <PublisherDisplayName>a7a0519a-c792-498d-b6b7-225725c991ce</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Sports_Score_Tracker.UWP.App">
+      EntryPoint="ScoreTracker.UWP.App">
       <uap:VisualElements
-        DisplayName="Sports_Score_Tracker.UWP"
+        DisplayName="ScoreTracker.UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Sports_Score_Tracker.UWP"
+        Description="ScoreTracker.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>

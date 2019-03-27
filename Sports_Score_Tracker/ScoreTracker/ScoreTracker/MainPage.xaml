@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Sports_Score_Tracker"
-             x:Class="Sports_Score_Tracker.MainPage">
-
+             xmlns:local="clr-namespace:ScoreTracker"
+             x:Class="ScoreTracker.MainPage">
 
     <Grid BackgroundColor="DarkGreen">
         <Grid.RowDefinitions>
@@ -26,8 +25,8 @@
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSoccer_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
-         </Image>
-            <Image x:Name="imgBasketball" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="3"></Image>
+        </Image>
+        <Image x:Name="imgBasketball" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="3"></Image>
         <Image x:Name="imgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1"></Image>
         <Image x:Name="imgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3"></Image>
         <Image x:Name="imgGaa" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="1"></Image>

@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace Sports_Score_Tracker
+namespace ScoreTracker
 {
     public partial class App : Application
     {

@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Sports_Score_Tracker.UWP
+namespace ScoreTracker.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace Sports_Score_Tracker.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new Sports_Score_Tracker.App());
+            LoadApplication(new ScoreTracker.App());
         }
     }
 }
