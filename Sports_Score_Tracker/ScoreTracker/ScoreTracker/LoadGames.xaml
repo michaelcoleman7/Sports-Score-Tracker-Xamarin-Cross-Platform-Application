@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreTracker.LoadGames">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <ListView x:Name="lvMatches" Margin="3, 3, 3, 0"
+                  ItemSelected="LvMatches_ItemSelected"
+                  Grid.Row="1" Grid.Column="0" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="2">
+                            <StackLayout Orientation="Horizontal" Margin="2, 1">
+                                <Label Text="{Binding Path=HomeTeam}" />
+                                <Label Text="{Binding Path=HomeScore}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="2, 1">
+                                <Label Text="{Binding Path=AwayTeam}" />
+                                <Label Text="{Binding Path=AwayScore}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

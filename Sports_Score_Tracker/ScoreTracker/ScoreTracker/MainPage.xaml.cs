@@ -46,5 +46,10 @@ namespace ScoreTracker
             //naviage to the Soccer.xaml page
             await Navigation.PushAsync(new Soccer());
         }
+
+        private async void Matches_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoadGames());
+        }
     }
 }
