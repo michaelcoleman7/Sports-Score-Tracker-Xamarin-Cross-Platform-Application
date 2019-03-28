@@ -35,7 +35,6 @@ namespace ScoreTracker
             //matchList.Add(test);
             // set the data context for the list view
             lvMatches.ItemsSource = matchList;
-            
 
         }
 
@@ -62,10 +61,17 @@ namespace ScoreTracker
                 // create the stream
                 Stream stream = assembly.GetManifestResourceStream(
                                     "ScoreTracker.DataFiles.SavedGames.txt");
-                using (var reader = new StreamReader(stream))
+                try
                 {
-                    jsonText = reader.ReadToEnd();
-                    // include JSON library now
+                    using (var reader = new StreamReader(stream))
+                    {
+                        jsonText = reader.ReadToEnd();
+                        // include JSON library now
+                    }
+                }
+                catch (Exception e)
+                {
+                    jsonText = "";
                 }
             }
 

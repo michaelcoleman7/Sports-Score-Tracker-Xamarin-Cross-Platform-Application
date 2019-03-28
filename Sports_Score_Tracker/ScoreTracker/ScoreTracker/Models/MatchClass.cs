@@ -27,11 +27,40 @@ namespace ScoreTracker.Models
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string filename = Path.Combine(path, "SavedGames.txt");
+            StringBuilder sb = new StringBuilder();
 
-            using (var writer = new StreamWriter(filename, false))
+            if (File.Exists(filename))
             {
-                string jsonText = JsonConvert.SerializeObject(list);
-                writer.WriteLine(jsonText);
+                using (var reader = new StreamReader(filename, false))
+                {
+                    sb.Append(reader.ReadToEnd());
+                    sb.Append(',');
+                }
+                using (var writer = new StreamWriter(filename, false))
+                {
+                    string jsonText = JsonConvert.SerializeObject(list, Formatting.Indented);
+                    //writer.WriteLine(jsonText);
+
+
+                    sb.Append(jsonText);
+                    sb.Replace('[', ' ');
+                    sb.Replace(']', ' ');
+
+                    sb.Insert(0, "[");
+                    sb.Append(']');
+                    writer.WriteLine(sb);
+                }
+            }
+            else
+            {
+                using (var writer = new StreamWriter(filename, false))
+                {
+                    string jsonText = JsonConvert.SerializeObject(list, Formatting.Indented);
+                    //writer.WriteLine(jsonText);
+
+                    writer.WriteLine(jsonText);
+                }
+
             }
         }
     }
