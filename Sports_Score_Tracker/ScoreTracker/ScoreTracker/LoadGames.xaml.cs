@@ -26,14 +26,15 @@ namespace ScoreTracker
 
         }
 
+        //Method to set up default settings needed for page
         private void SetupDefaults()
         {
             if (matchList == null) matchList = new List<MatchClass>();
 
+            //call readlist function in order to populate matchList
             matchList = ReadList();
-            //MatchClass test = new MatchClass("1","1","1","1");
-            //matchList.Add(test);
-            // set the data context for the list view
+
+            // Set data context for the list view
             lvMatches.ItemsSource = matchList;
 
         }
@@ -43,40 +44,43 @@ namespace ScoreTracker
             List<MatchClass> myList = new List<MatchClass>();
             string jsonText;
 
-            try  // reading the localApplicationFolder first
+            // Read localApplicationFolder
+            try
             {
                 string path = Environment.GetFolderPath(
                                 Environment.SpecialFolder.LocalApplicationData);
                 string filename = Path.Combine(path, "SavedGames.txt");
                 using (var reader = new StreamReader(filename))
                 {
+                    //read text file contents into jsontext
                     jsonText = reader.ReadToEnd();
-                    // need json library
                 }
             }
-            catch // fallback is to read the default file
+            // if unable to read localApplicationFolder, read the default file
+            catch
             {
                 var assembly = IntrospectionExtensions.GetTypeInfo(
                                                 typeof(MainPage)).Assembly;
-                // create the stream
+                // Create stream
                 Stream stream = assembly.GetManifestResourceStream(
                                     "ScoreTracker.DataFiles.SavedGames.txt");
                 try
                 {
                     using (var reader = new StreamReader(stream))
                     {
+                        //read text file contents into jsontext
                         jsonText = reader.ReadToEnd();
-                        // include JSON library now
                     }
                 }
-                catch (Exception e)
+                //catch when trying to read file if it doesn't exist
+                catch (Exception)
                 {
+                    //set jsontext to empty string so serializing is not being carried out on null string when file doesn't exist
                     jsonText = "";
                 }
             }
-
+            //deserialize json text into myList and return myList
             myList = JsonConvert.DeserializeObject<List<MatchClass>>(jsonText);
-
             return myList;
         }
 
