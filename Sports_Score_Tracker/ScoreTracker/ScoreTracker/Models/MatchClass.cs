@@ -6,16 +6,16 @@ using System.Text;
 
 namespace ScoreTracker.Models
 {
-    class SoccerClass
+    class MatchClass
     {
         public string HomeTeam { get; set; }
         public string HomeScore { get; set; }
         public string AwayTeam { get; set; }
         public string AwayScore { get; set; }
 
-        public SoccerClass() { }
+        public MatchClass() { }
 
-        public SoccerClass(string ht, string hs, string awt, string aws)
+        public MatchClass(string ht, string hs, string awt, string aws)
         {
             HomeTeam = ht;
             HomeScore = hs;
@@ -23,7 +23,7 @@ namespace ScoreTracker.Models
             AwayScore = aws;
         }
 
-        public static void SaveSoccerDataToFile(List<SoccerClass> list)
+        public static void SaveSoccerDataToFile(List<MatchClass> list)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string filename = Path.Combine(path, "SavedGames.txt");

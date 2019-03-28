@@ -16,7 +16,7 @@ namespace ScoreTracker
     public partial class Soccer : ContentPage
     {
         private ISimpleAudioPlayer audioPlayer;
-        List<SoccerClass> soccerList = new List<SoccerClass>();
+        List<MatchClass> soccerList = new List<MatchClass>();
 
         public Soccer()
         {
@@ -42,9 +42,9 @@ namespace ScoreTracker
 
         private void SaveGame_Clicked(object sender, EventArgs e)
         {
-            SoccerClass s = new SoccerClass(homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
+            MatchClass s = new MatchClass(homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
             soccerList.Add(s);
-            SoccerClass.SaveSoccerDataToFile(soccerList);
+            MatchClass.SaveSoccerDataToFile(soccerList);
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
             audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
