@@ -28,7 +28,11 @@
         </Image>
         <Image x:Name="imgBasketball" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="3"></Image>
         <Image x:Name="imgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1"></Image>
-        <Image x:Name="imgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3"></Image>
+        <Image x:Name="imgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ImgHockey_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
         <Image x:Name="imgGaa" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="1"></Image>
         <Image x:Name="imgRugby" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="3"></Image>
         <Button x:Name="Matches_btn" Text="View Saved Matches" Grid.Row="4" Grid.Column="2" Clicked="Matches_btn_Clicked"></Button>

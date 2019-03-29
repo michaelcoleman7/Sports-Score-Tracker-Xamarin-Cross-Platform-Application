@@ -51,5 +51,11 @@ namespace ScoreTracker
         {
             await Navigation.PushAsync(new LoadGames());
         }
+
+        private async void ImgHockey_Tapped(object sender, EventArgs e)
+        {
+            //naviage to the Soccer.xaml page
+            await Navigation.PushAsync(new IceHockey());
+        }
     }
 }
