@@ -17,16 +17,19 @@
 
         <ListView x:Name="lvMatches" Margin="3, 3, 3, 0"
                   ItemSelected="LvMatches_ItemSelected"
-                  Grid.Row="1" Grid.Column="0" >
+                  Grid.Row="1" Grid.Column="0" HasUnevenRows="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Margin="2">
-                            <StackLayout Orientation="Horizontal" Margin="2, 1">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="2, 1">
+                                <Label Text="{Binding Path=GameType}" FontSize="Small" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="2, 1">
                                 <Label Text="{Binding Path=HomeTeam}" />
                                 <Label Text="{Binding Path=HomeScore}" />
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="2, 1">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="2, 1">
                                 <Label Text="{Binding Path=AwayTeam}" />
                                 <Label Text="{Binding Path=AwayScore}" />
                             </StackLayout>
