@@ -23,7 +23,7 @@ namespace ScoreTracker.Models
             AwayScore = aws;
         }
 
-        public static void SaveSoccerDataToFile(List<MatchClass> list)
+        public static void SaveMatchDataToFile(List<MatchClass> list)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string filename = Path.Combine(path, "SavedGames.txt");

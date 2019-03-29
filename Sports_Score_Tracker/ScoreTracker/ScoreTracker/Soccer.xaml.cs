@@ -26,6 +26,7 @@ namespace ScoreTracker
 
         private void AddHome_Clicked(object sender, EventArgs e)
         {
+            //Change homescore text to string then convert to an integer - add 1, then set to text property
             string score = homeScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 1;
@@ -34,23 +35,26 @@ namespace ScoreTracker
 
         private void AddAway_Clicked(object sender, EventArgs e)
         {
+            //Change awayscore text to string then convert to an integer - add 1, then set to text property
             string score = awayScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 1;
             awayScore.Text = addscore.ToString();
         }
 
-        private void SaveGame_Clicked(object sender, EventArgs e)
+        private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             MatchClass s = new MatchClass(homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
             soccerList.Add(s);
-            MatchClass.SaveSoccerDataToFile(soccerList);
+            MatchClass.SaveMatchDataToFile(soccerList);
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
             audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.fulltime.mp3");
             bool isSuccess = audioPlayer.Load(audioStream);
             audioPlayer.Play();
+
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }
