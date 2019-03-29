@@ -8,6 +8,7 @@ namespace ScoreTracker.Models
 {
     class MatchClass
     {
+        public string GameType { get; set; }
         public string HomeTeam { get; set; }
         public string HomeScore { get; set; }
         public string AwayTeam { get; set; }
@@ -15,8 +16,9 @@ namespace ScoreTracker.Models
 
         public MatchClass() { }
 
-        public MatchClass(string ht, string hs, string awt, string aws)
+        public MatchClass(string gt, string ht, string hs, string awt, string aws)
         {
+            GameType = gt;
             HomeTeam = ht;
             HomeScore = hs;
             AwayTeam = awt;
