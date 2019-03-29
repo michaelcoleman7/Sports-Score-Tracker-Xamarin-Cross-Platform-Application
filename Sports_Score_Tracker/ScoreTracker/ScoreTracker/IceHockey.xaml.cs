@@ -18,7 +18,8 @@ namespace ScoreTracker
 		public IceHockey ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> hockeyList = new List<MatchClass>();
 
