@@ -17,6 +17,7 @@
     <None Remove="Assets\Images\soccer.jpg" />
     <None Remove="Assets\Images\tennisball.png" />
     <None Remove="AudioFiles\fulltime.mp3" />
+    <None Remove="AudioFiles\HockeyHorn.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,7 @@
     <EmbeddedResource Include="Assets\Images\soccer.jpg" />
     <EmbeddedResource Include="Assets\Images\tennisball.png" />
     <EmbeddedResource Include="AudioFiles\fulltime.mp3" />
+    <EmbeddedResource Include="AudioFiles\HockeyHorn.mp3" />
   </ItemGroup>
 
   <ItemGroup>
