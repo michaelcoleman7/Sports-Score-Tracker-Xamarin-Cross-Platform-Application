@@ -49,13 +49,20 @@ namespace ScoreTracker
 
         private async void Matches_btn_Clicked(object sender, EventArgs e)
         {
+            //naviage to the LoadGames.xaml page
             await Navigation.PushAsync(new LoadGames());
         }
 
         private async void ImgHockey_Tapped(object sender, EventArgs e)
         {
-            //naviage to the Soccer.xaml page
+            //naviage to the IceHockey.xaml page
             await Navigation.PushAsync(new IceHockey());
+        }
+
+        private async void ImgBasketball_Tapped(object sender, EventArgs e)
+        {
+            //naviage to the Basketball.xaml page
+            await Navigation.PushAsync(new Basketball());
         }
     }
 }
