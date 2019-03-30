@@ -24,7 +24,7 @@ namespace ScoreTracker
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> tennisList = new List<MatchClass>();
 
-        private void AddHome_Clicked(object sender, EventArgs e)
+        private async void AddHome_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
             string score = homeScore.Text.ToString();
@@ -32,19 +32,37 @@ namespace ScoreTracker
             if (addscore == 0 || addscore == 15)
             {
                 addscore = addscore + 15;
+                homeScore.Text = addscore.ToString();
             }
             else if (addscore == 30)
             {
                 addscore = addscore + 10;
+                homeScore.Text = addscore.ToString();
+                if (awayScore.Text == "40")
+                {
+                    //Display an alert which returns the user selected value
+                    string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, homeTeam.Text, awayTeam.Text);
+
+                    //Add (W) to the winner of the deuce's name, so that it's clear who won the match
+                    if (winner == homeTeam.Text)
+                    {
+                        //add (W) to home team
+                        homeTeam.Text = homeTeam.Text + " (W)";
+                    }
+                    else if (winner == awayTeam.Text)
+                    {
+                        //add (W) to away team name
+                        awayTeam.Text = awayTeam.Text + " (W)";
+                    }
+                }
             }
             else
             {
-                DisplayAlert("Alert", "Scoring cannot go above 40", "OK");
+                await DisplayAlert("Scoring Alert", "Scoring cannot go above 40", "OK");
             }
-            homeScore.Text = addscore.ToString();
         }
 
-        private void AddAway_Clicked(object sender, EventArgs e)
+        private async void AddAway_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
             string score = awayScore.Text.ToString();
@@ -52,16 +70,35 @@ namespace ScoreTracker
             if (addscore == 0 || addscore == 15)
             {
                 addscore = addscore + 15;
+                awayScore.Text = addscore.ToString();
             }
             else if (addscore == 30)
             {
                 addscore = addscore + 10;
+                awayScore.Text = addscore.ToString();
+                //Handle Deuce encounter and decide a winner
+                if (homeScore.Text == "40")
+                {
+                    //Display an alert which returns the user selected value
+                    string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, homeTeam.Text, awayTeam.Text);
+
+                    //Add (W) to the winner of the deuce's name, so that it's clear who won the match
+                    if (winner == homeTeam.Text)
+                    {
+                        //add (W) to home team
+                        homeTeam.Text = homeTeam.Text + " (W)";
+                    }
+                    else if(winner == awayTeam.Text)
+                    {
+                        //add (W) to away team name
+                        awayTeam.Text = awayTeam.Text + " (W)";
+                    }    
+                }
             }
             else
             {
-                DisplayAlert("Alert", "Scoring cannot go above 40", "OK");
+                await DisplayAlert("Alert", "Scoring cannot go above 40", "OK");
             }
-            awayScore.Text = addscore.ToString();
         }
 
         private async void SaveGame_Clicked(object sender, EventArgs e)
