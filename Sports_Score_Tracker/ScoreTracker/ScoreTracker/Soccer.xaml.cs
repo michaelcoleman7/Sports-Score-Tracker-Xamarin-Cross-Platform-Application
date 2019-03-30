@@ -44,8 +44,8 @@ namespace ScoreTracker
 
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
-            MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
-            soccerList.Add(s);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
+            soccerList.Add(mc);
             MatchClass.SaveMatchDataToFile(soccerList);
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
