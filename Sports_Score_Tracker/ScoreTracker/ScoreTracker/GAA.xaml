@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreTracker.GAA">
+    
+    <Grid BackgroundColor="DodgerBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="gameType" Text="GAA" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+        <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
+        <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
+        <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black" HorizontalOptions="Start">
+            <Label x:Name="homeGoals" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+        <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black" HorizontalOptions="End">
+            <Label x:Name="homePoints" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+        <Frame Grid.Row="2" Grid.Column="3" BorderColor="Black" HorizontalOptions="Start">
+            <Label x:Name="awayGoals" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+        <Frame Grid.Row="2" Grid.Column="3" BorderColor="Black" HorizontalOptions="End">
+            <Label x:Name="awayPoints" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+
+        <Button x:Name="AddHome1Goal" Text="+" HorizontalOptions="Start" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome1Goal_Clicked"/>
+        <Button x:Name="AddHome1Point" Text="+" HorizontalOptions="End" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome1Point_Clicked"/>
+        <Button x:Name="AddAway1Goal" Text="+" HorizontalOptions="Start" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway1Goal_Clicked"/>
+        <Button x:Name="AddAway1Point" Text="+" HorizontalOptions="End" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway1Point_Clicked"/>
+        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" Clicked="SaveGame_Clicked"/>
+    </Grid>
+</ContentPage>

@@ -116,7 +116,7 @@ namespace ScoreTracker
 
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
-            //create new match class and add to hockeyList
+            //create new match class and add to tennisList
             MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
             tennisList.Add(mc);
             MatchClass.SaveMatchDataToFile(tennisList);
