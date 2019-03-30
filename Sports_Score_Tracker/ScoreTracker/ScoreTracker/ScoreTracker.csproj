@@ -19,6 +19,7 @@
     <None Remove="AudioFiles\BasketballBuzzer.mp3" />
     <None Remove="AudioFiles\fulltime.mp3" />
     <None Remove="AudioFiles\HockeyHorn.mp3" />
+    <None Remove="AudioFiles\TennisServe.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +32,7 @@
     <EmbeddedResource Include="AudioFiles\BasketballBuzzer.mp3" />
     <EmbeddedResource Include="AudioFiles\fulltime.mp3" />
     <EmbeddedResource Include="AudioFiles\HockeyHorn.mp3" />
+    <EmbeddedResource Include="AudioFiles\TennisServe.mp3" />
   </ItemGroup>
 
   <ItemGroup>

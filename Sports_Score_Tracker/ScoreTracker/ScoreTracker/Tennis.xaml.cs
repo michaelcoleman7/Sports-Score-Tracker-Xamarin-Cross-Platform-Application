@@ -123,7 +123,7 @@ namespace ScoreTracker
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
             audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-            Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.HockeyHorn.mp3");
+            Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.TennisServe.mp3");
             bool isSuccess = audioPlayer.Load(audioStream);
             audioPlayer.Play();
 
