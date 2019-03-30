@@ -31,9 +31,11 @@
             <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
 
-        <Button x:Name="AddHome" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome_Clicked"/>
-        <Button x:Name="AddAway" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway_Clicked"/>
-
+        <Button x:Name="AddHome2Points" Text="+" HorizontalOptions="Start" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome2Points_Clicked"/>
+        <Button x:Name="AddHome3Points" Text="+" HorizontalOptions="End" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome3Points_Clicked"/>
+        <Button x:Name="AddAway2Points" Text="+" HorizontalOptions="Start" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway2Points_Clicked"/>
+        <Button x:Name="AddAway3Points" Text="+" HorizontalOptions="End" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway3Points_Clicked"/>
+        
         <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" Clicked="SaveGame_Clicked"/>
     </Grid>
 </ContentPage>

@@ -23,7 +23,7 @@ namespace ScoreTracker
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> basketballList = new List<MatchClass>();
 
-        private void AddHome_Clicked(object sender, EventArgs e)
+        private void AddHome2Points_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
             string score = homeScore.Text.ToString();
@@ -31,13 +31,29 @@ namespace ScoreTracker
             addscore = addscore + 2;
             homeScore.Text = addscore.ToString();
         }
+        private void AddHome3Points_Clicked(object sender, EventArgs e)
+        {
+            //Change homescore text to string then convert to an integer - add 1, then set to text property
+            string score = homeScore.Text.ToString();
+            int addscore = Convert.ToInt32(score);
+            addscore = addscore + 3;
+            homeScore.Text = addscore.ToString();
+        }
 
-        private void AddAway_Clicked(object sender, EventArgs e)
+        private void AddAway2Points_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
             string score = awayScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 2;
+            awayScore.Text = addscore.ToString();
+        }
+        private void AddAway3Points_Clicked(object sender, EventArgs e)
+        {
+            //Change awayscore text to string then convert to an integer - add 1, then set to text property
+            string score = awayScore.Text.ToString();
+            int addscore = Convert.ToInt32(score);
+            addscore = addscore + 3;
             awayScore.Text = addscore.ToString();
         }
 
