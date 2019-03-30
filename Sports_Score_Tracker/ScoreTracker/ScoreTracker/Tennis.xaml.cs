@@ -18,7 +18,8 @@ namespace ScoreTracker
 		public Tennis ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> tennisList = new List<MatchClass>();
@@ -28,7 +29,18 @@ namespace ScoreTracker
             //Change homescore text to string then convert to an integer - add 1, then set to text property
             string score = homeScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
-            addscore = addscore + 15;
+            if (addscore == 0 || addscore == 15)
+            {
+                addscore = addscore + 15;
+            }
+            else if (addscore == 30)
+            {
+                addscore = addscore + 10;
+            }
+            else
+            {
+                DisplayAlert("Alert", "Scoring cannot go above 40", "OK");
+            }
             homeScore.Text = addscore.ToString();
         }
 
@@ -37,7 +49,18 @@ namespace ScoreTracker
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
             string score = awayScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
-            addscore = addscore + 15;
+            if (addscore == 0 || addscore == 15)
+            {
+                addscore = addscore + 15;
+            }
+            else if (addscore == 30)
+            {
+                addscore = addscore + 10;
+            }
+            else
+            {
+                DisplayAlert("Alert", "Scoring cannot go above 40", "OK");
+            }
             awayScore.Text = addscore.ToString();
         }
 

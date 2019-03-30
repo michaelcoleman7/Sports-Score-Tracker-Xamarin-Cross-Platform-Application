@@ -31,7 +31,11 @@
                 <TapGestureRecognizer Tapped="ImgBasketball_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Image x:Name="imgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1"></Image>
+        <Image x:Name="imgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ImgTennis_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
         <Image x:Name="imgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgHockey_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
