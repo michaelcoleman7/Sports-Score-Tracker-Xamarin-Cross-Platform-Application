@@ -25,7 +25,7 @@ namespace ScoreTracker
 
         private void AddHome2Points_Clicked(object sender, EventArgs e)
         {
-            //Change homescore text to string then convert to an integer - add 1, then set to text property
+            //Change homescore text to string then convert to an integer - add 2, then set to text property
             string score = homeScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 2;
@@ -33,7 +33,7 @@ namespace ScoreTracker
         }
         private void AddHome3Points_Clicked(object sender, EventArgs e)
         {
-            //Change homescore text to string then convert to an integer - add 1, then set to text property
+            //Change homescore text to string then convert to an integer - add 3, then set to text property
             string score = homeScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 3;
@@ -42,7 +42,7 @@ namespace ScoreTracker
 
         private void AddAway2Points_Clicked(object sender, EventArgs e)
         {
-            //Change awayscore text to string then convert to an integer - add 1, then set to text property
+            //Change awayscore text to string then convert to an integer - add 2, then set to text property
             string score = awayScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 2;
@@ -50,7 +50,7 @@ namespace ScoreTracker
         }
         private void AddAway3Points_Clicked(object sender, EventArgs e)
         {
-            //Change awayscore text to string then convert to an integer - add 1, then set to text property
+            //Change awayscore text to string then convert to an integer - add 3, then set to text property
             string score = awayScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 3;
