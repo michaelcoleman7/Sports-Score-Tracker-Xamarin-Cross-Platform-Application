@@ -69,5 +69,11 @@ namespace ScoreTracker
             //naviage to the Tennis.xaml page
             await Navigation.PushAsync(new Tennis());
         }
+
+        private async void ImgGAA_Tapped(object sender, EventArgs e)
+        {
+            //naviage to the Tennis.xaml page
+            await Navigation.PushAsync(new GAA());
+        }
     }
 }
