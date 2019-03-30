@@ -16,6 +16,7 @@
     <None Remove="Assets\Images\rugby.jpg" />
     <None Remove="Assets\Images\soccer.jpg" />
     <None Remove="Assets\Images\tennisball.png" />
+    <None Remove="AudioFiles\BasketballBuzzer.mp3" />
     <None Remove="AudioFiles\fulltime.mp3" />
     <None Remove="AudioFiles\HockeyHorn.mp3" />
   </ItemGroup>
@@ -27,6 +28,7 @@
     <EmbeddedResource Include="Assets\Images\rugby.jpg" />
     <EmbeddedResource Include="Assets\Images\soccer.jpg" />
     <EmbeddedResource Include="Assets\Images\tennisball.png" />
+    <EmbeddedResource Include="AudioFiles\BasketballBuzzer.mp3" />
     <EmbeddedResource Include="AudioFiles\fulltime.mp3" />
     <EmbeddedResource Include="AudioFiles\HockeyHorn.mp3" />
   </ItemGroup>
@@ -38,6 +40,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Basketball.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="IceHockey.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
