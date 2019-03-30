@@ -29,15 +29,21 @@ namespace ScoreTracker
             //Change homescore text to string then convert to an integer - add 1, then set to text property
             string score = homeScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
+
+            //Add 15 to score for 1st 2 scores
             if (addscore == 0 || addscore == 15)
             {
+                //add to score and update homeScore text
                 addscore = addscore + 15;
                 homeScore.Text = addscore.ToString();
             }
+            //add 10 to 3rd score
             else if (addscore == 30)
             {
+                //add to score and update homeScore text
                 addscore = addscore + 10;
                 homeScore.Text = addscore.ToString();
+
                 if (awayScore.Text == "40")
                 {
                     //Display an alert which returns the user selected value
@@ -58,6 +64,7 @@ namespace ScoreTracker
             }
             else
             {
+                //display alert to let user know the score cannot exceed 40
                 await DisplayAlert("Scoring Alert", "Scoring cannot go above 40", "OK");
             }
         }
@@ -67,15 +74,20 @@ namespace ScoreTracker
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
             string score = awayScore.Text.ToString();
             int addscore = Convert.ToInt32(score);
+            //Add 15 to score for 1st 2 scores
             if (addscore == 0 || addscore == 15)
             {
+                //add to score and update awayScore text
                 addscore = addscore + 15;
                 awayScore.Text = addscore.ToString();
             }
+            //add 10 to 3rd score
             else if (addscore == 30)
             {
+                //add to score and update awayScore text
                 addscore = addscore + 10;
                 awayScore.Text = addscore.ToString();
+
                 //Handle Deuce encounter and decide a winner
                 if (homeScore.Text == "40")
                 {
@@ -97,6 +109,7 @@ namespace ScoreTracker
             }
             else
             {
+                // Adapted from - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/pop-ups
                 await DisplayAlert("Alert", "Scoring cannot go above 40", "OK");
             }
         }
@@ -114,6 +127,7 @@ namespace ScoreTracker
             bool isSuccess = audioPlayer.Load(audioStream);
             audioPlayer.Play();
 
+            //Navigate back to Mainpage
             await Navigation.PushAsync(new MainPage());
         }
     }
