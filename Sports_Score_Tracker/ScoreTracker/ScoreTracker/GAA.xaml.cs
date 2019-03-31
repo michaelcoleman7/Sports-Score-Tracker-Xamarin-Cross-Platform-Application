@@ -18,7 +18,8 @@ namespace ScoreTracker
 		public GAA ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> gaaList = new List<MatchClass>();
 
