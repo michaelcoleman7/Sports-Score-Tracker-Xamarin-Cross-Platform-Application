@@ -14,9 +14,9 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
@@ -31,13 +31,13 @@
             <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
 
-        <Button x:Name="AddHomeTry" Text="+5" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeTry_Clicked"/>
-        <Button x:Name="AddHomeConversion" Text="+2" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeConversion_Clicked"/>
-        <Button x:Name="AddHomeGoalKick" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeGoalKick_Clicked"/>
+        <Button x:Name="AddHomeTry" Text="+5" HorizontalOptions="Start" Grid.Row="3" FontSize="12" Grid.Column="1" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeTry_Clicked"/>
+        <Button x:Name="AddHomeConversion" Text="+2" HorizontalOptions="Center" Grid.Row="3" FontSize="12" Grid.Column="1" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeConversion_Clicked"/>
+        <Button x:Name="AddHomeGoalKick" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="12" Grid.Column="1" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeGoalKick_Clicked"/>
 
-        <Button x:Name="AddAwayTry" Text="+5" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayTry_Clicked"/>
-        <Button x:Name="AddAwayConversion" Text="+2" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayConversion_Clicked"/>
-        <Button x:Name="AddAwayGoalKick" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayGoalKick_Clicked"/>
+        <Button x:Name="AddAwayTry" Text="+5" HorizontalOptions="Start" Grid.Row="3" FontSize="12" Grid.Column="3" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayTry_Clicked"/>
+        <Button x:Name="AddAwayConversion" Text="+2" HorizontalOptions="Center" Grid.Row="3" FontSize="12" Grid.Column="3" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayConversion_Clicked"/>
+        <Button x:Name="AddAwayGoalKick" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="12" Grid.Column="3" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayGoalKick_Clicked"/>
 
         <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" Clicked="SaveGame_Clicked"/>
     </Grid>
