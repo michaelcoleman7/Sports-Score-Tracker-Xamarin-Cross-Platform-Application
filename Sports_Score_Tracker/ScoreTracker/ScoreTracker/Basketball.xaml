@@ -14,9 +14,9 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
@@ -31,10 +31,10 @@
             <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
 
-        <Button x:Name="AddHome2Points" Text="+2" HorizontalOptions="Start" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome2Points_Clicked"/>
-        <Button x:Name="AddHome3Points" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome3Points_Clicked"/>
-        <Button x:Name="AddAway2Points" Text="+2" HorizontalOptions="Start" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway2Points_Clicked"/>
-        <Button x:Name="AddAway3Points" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway3Points_Clicked"/>
+        <Button x:Name="AddHome2Points" Text="+2" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" Clicked="AddHome2Points_Clicked"/>
+        <Button x:Name="AddHome3Points" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" Clicked="AddHome3Points_Clicked"/>
+        <Button x:Name="AddAway2Points" Text="+2" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" Clicked="AddAway2Points_Clicked"/>
+        <Button x:Name="AddAway3Points" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" Clicked="AddAway3Points_Clicked"/>
         
         <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" Clicked="SaveGame_Clicked"/>
     </Grid>
