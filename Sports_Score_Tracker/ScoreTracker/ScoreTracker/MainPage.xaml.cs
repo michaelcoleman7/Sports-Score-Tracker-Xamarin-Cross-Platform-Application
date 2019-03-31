@@ -72,8 +72,13 @@ namespace ScoreTracker
 
         private async void ImgGAA_Tapped(object sender, EventArgs e)
         {
-            //naviage to the Tennis.xaml page
+            //naviage to the GAA.xaml page
             await Navigation.PushAsync(new GAA());
+        }
+        private async void ImgRugby_Tapped(object sender, EventArgs e)
+        {
+            //naviage to the Rugby.xaml page
+            await Navigation.PushAsync(new Rugby());
         }
     }
 }

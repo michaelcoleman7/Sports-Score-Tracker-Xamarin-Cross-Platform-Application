@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreTracker.Rugby">
+    
+    <Grid BackgroundColor="PaleVioletRed">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="gameType" Text="Rugby" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+        <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
+        <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
+        <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black">
+            <Label x:Name="homeScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+        <Frame Grid.Row="2" Grid.Column="3" BorderColor="Black">
+            <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+
+        <Button x:Name="AddHomeTry" Text="+5" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeTry_Clicked"/>
+        <Button x:Name="AddHomeConversion" Text="+2" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeConversion_Clicked"/>
+        <Button x:Name="AddHomeGoalKick" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddHomeGoalKick_Clicked"/>
+
+        <Button x:Name="AddAwayTry" Text="+5" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayTry_Clicked"/>
+        <Button x:Name="AddAwayConversion" Text="+2" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayConversion_Clicked"/>
+        <Button x:Name="AddAwayGoalKick" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" HeightRequest="40" VerticalOptions="Center" Clicked="AddAwayGoalKick_Clicked"/>
+
+        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" Clicked="SaveGame_Clicked"/>
+    </Grid>
+</ContentPage>
