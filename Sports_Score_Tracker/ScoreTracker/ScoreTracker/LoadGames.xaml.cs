@@ -35,7 +35,7 @@ namespace ScoreTracker
             matchList = ReadList();
 
             // Set data context for the list view
-            lvMatches.ItemsSource = matchList;
+            MatchesListView.ItemsSource = matchList;
 
         }
 
@@ -84,9 +84,10 @@ namespace ScoreTracker
             return myList;
         }
 
-        private void LvMatches_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void MatchesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            // set the binding context for each stacklayout to be the selected item on the listview
+            ListItemGameType.BindingContext = (MatchClass)e.SelectedItem;
         }
     }
 }

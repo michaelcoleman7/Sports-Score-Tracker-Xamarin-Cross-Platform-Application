@@ -12,11 +12,14 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ListView x:Name="lvMatches" Margin="3, 3, 3, 0"
-                  ItemSelected="LvMatches_ItemSelected"
+        <ListView x:Name="MatchesListView" Margin="3, 3, 3, 0"
+                  ItemSelected="MatchesListView_ItemSelected"
                   Grid.Row="1" Grid.Column="0" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -38,5 +41,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <StackLayout x:Name="ListItemGameType" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center">
+            <Label x:Name="gameTypelbl" Text="{Binding Path=GameType}" FontSize="Large" TextColor="Black" />
+        </StackLayout>
     </Grid>
 </ContentPage>
