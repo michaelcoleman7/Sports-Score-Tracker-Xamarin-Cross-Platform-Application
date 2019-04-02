@@ -59,19 +59,27 @@ namespace ScoreTracker
 
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
-            //create new match class and add to hockeyList
-            MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
-            basketballList.Add(s);
-            MatchClass.SaveMatchDataToFile(basketballList);
+            if (matchName.Text == null)
+            {
+                await DisplayAlert("Alert", "Match Name cannot be empty", "OK");
+            }
+            else
+            {
+                //create new match class and add to hockeyList
+                MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text,matchName.Text);
+                basketballList.Add(s);
+                MatchClass.SaveMatchDataToFile(basketballList);
 
-            //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
-            audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-            Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.BasketballBuzzer.mp3");
-            bool isSuccess = audioPlayer.Load(audioStream);
-            audioPlayer.Play();
+                //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
+                audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.BasketballBuzzer.mp3");
+                bool isSuccess = audioPlayer.Load(audioStream);
+                audioPlayer.Play();
 
-            //return to Mainpage
-            await Navigation.PushAsync(new MainPage());
+                //return to Mainpage
+                await Navigation.PushAsync(new MainPage());
+            }
+
         }
     }
 }

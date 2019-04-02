@@ -9,6 +9,8 @@
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.3*" />
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
@@ -35,7 +37,8 @@
         <Button x:Name="AddHome3Points" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" Clicked="AddHome3Points_Clicked"/>
         <Button x:Name="AddAway2Points" Text="+2" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" Clicked="AddAway2Points_Clicked"/>
         <Button x:Name="AddAway3Points" Text="+3" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" Clicked="AddAway3Points_Clicked"/>
-        
-        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" Clicked="SaveGame_Clicked"/>
+
+        <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"></Entry>
+        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="6" Grid.Column="2" Clicked="SaveGame_Clicked"/>
     </Grid>
 </ContentPage>
