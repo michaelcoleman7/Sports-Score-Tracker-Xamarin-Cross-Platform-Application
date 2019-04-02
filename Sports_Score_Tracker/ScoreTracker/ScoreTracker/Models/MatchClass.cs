@@ -41,10 +41,7 @@ namespace ScoreTracker.Models
                 {
                     //read all in file and add , if  json content exists in file
                     sb.Append(reader.ReadToEnd());
-                    if (sb.ToString().Equals(""))
-                    {
-                        
-                    }
+                    if (sb.ToString().Equals("")){}
                     else {
                         sb.Append(',');
                     }
@@ -83,7 +80,23 @@ namespace ScoreTracker.Models
             }
         }
 
-        public static List<MatchClass> ReadList()
+        public static void SaveUpdatedMatchDataToFile(List<MatchClass> list)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string filename = Path.Combine(path, "SavedGames.txt");
+
+            // Will create new file when doesn't exist
+            using (var writer = new StreamWriter(filename, false))
+            {
+                //serialize list to json format
+                string jsonText = JsonConvert.SerializeObject(list, Formatting.Indented);
+                //write jsontext to file
+                writer.WriteLine(jsonText);
+            }
+
+        }
+
+            public static List<MatchClass> ReadList()
         {
             List<MatchClass> myList = new List<MatchClass>();
             string jsonText;

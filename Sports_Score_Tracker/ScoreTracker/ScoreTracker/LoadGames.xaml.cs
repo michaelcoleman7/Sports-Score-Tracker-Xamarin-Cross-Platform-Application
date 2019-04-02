@@ -48,5 +48,23 @@ namespace ScoreTracker
             ListItemHomeScore.BindingContext = (MatchClass)e.SelectedItem;
             ListItemAwayScore.BindingContext = (MatchClass)e.SelectedItem;
         }
+
+        private void SaveBtn_Clicked(object sender, EventArgs e)
+        {
+            foreach (var mc in matchList)
+            {
+                if (mc.MatchName == matchNamelbl.Text)
+                {
+                    mc.HomeTeam = homeTeamlbl.Text;
+                    mc.HomeScore = homeScorelbl.Text;
+                    mc.AwayTeam = awayTeamlbl.Text;
+                    mc.AwayScore = awayScorelbl.Text;
+                }
+            }
+            MatchesListView.ItemsSource = null;
+            MatchesListView.ItemsSource = matchList;
+
+            MatchClass.SaveUpdatedMatchDataToFile(matchList);
+        }
     }
 }
