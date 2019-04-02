@@ -22,6 +22,7 @@ namespace ScoreTracker
         }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> rugbyList = new List<MatchClass>();
+        List<MatchClass> existingList = new List<MatchClass>();
 
         //Add a try to the current home score
         private void AddHomeTry_Clicked(object sender, EventArgs e)
@@ -85,9 +86,59 @@ namespace ScoreTracker
 
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
+            //if match name is left empty by user
+            if (matchName.Text == null)
+            {
+                //alert user they must enter a match name
+                await DisplayAlert("Save Requirement", "Match Name cannot be empty", "OK");
+            }
+            else
+            {
+                //boolean to determine if match name already exists
+                Boolean matchExists = false;
+                //read in all existing matches into existingList
+                existingList = MatchClass.ReadList();
+
+                //if no matches exist in existingList
+                if (existingList == null)
+                {
+                    //save match to file and return to main menu
+                    SaveandReturn();
+                }
+                //if matches are loaded into existingList
+                else
+                {
+                    //loop through each item in existing list and see if match name exists already
+                    foreach (var mc in existingList)
+                    {
+                        //if match name is found
+                        if (mc.MatchName == matchName.Text)
+                        {
+                            matchExists = true;
+                        }
+                    }
+
+                    //if name already exists display alert
+                    if (matchExists)
+                    {
+                        await DisplayAlert("Duplication Error", "Match Name already exists, please enter another", "OK");
+                    }
+                    //if name doesn't exist already then save match
+                    else
+                    {
+                        //save match to file and return to main menu
+                        SaveandReturn();
+                    }
+                }
+            }
+        }
+
+        //Method used to save match to file, play sound effect and return to main menu
+        private async void SaveandReturn()
+        {
             //create new match class and add to rugbyList
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text,matchName.Text);
-            rugbyList.Add(mc);
+            MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text);
+            rugbyList.Add(s);
             MatchClass.SaveMatchDataToFile(rugbyList);
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
@@ -96,6 +147,7 @@ namespace ScoreTracker
             bool isSuccess = audioPlayer.Load(audioStream);
             audioPlayer.Play();
 
+            //return to Mainpage
             await Navigation.PushAsync(new MainPage());
         }
     }

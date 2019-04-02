@@ -110,7 +110,7 @@ namespace ScoreTracker
         //Method used to save match to file, play sound effect and return to main menu
         private async void SaveandReturn()
         {
-            //create new match class and add to hockeyList
+            //create new match class and add to basketballList
             MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text);
             basketballList.Add(s);
             MatchClass.SaveMatchDataToFile(basketballList);
