@@ -63,7 +63,7 @@ namespace ScoreTracker
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
-            if (matchName.Text == null)
+            if (matchName.Text == null || matchName.Text.Trim() == "")
             {
                 //alert user they must enter a match name
                 await DisplayAlert("Save Requirement", "Match Name cannot be empty", "OK");
@@ -88,7 +88,7 @@ namespace ScoreTracker
                     foreach (var mc in existingList)
                     {
                         //if match name is found
-                        if (mc.MatchName == matchName.Text)
+                        if (mc.MatchName == matchName.Text.Trim())
                         {
                             matchExists = true;
                         }
@@ -115,7 +115,7 @@ namespace ScoreTracker
             string homeScore = homeGoals.Text + "-" + homePoints.Text;
             string awayScore = awayGoals.Text + "-" + awayPoints.Text;
             //create new match class and add to gaaList
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore, awayTeam.Text, awayScore, matchName.Text);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore, awayTeam.Text, awayScore, matchName.Text.Trim());
             gaaList.Add(mc);
             MatchClass.SaveMatchDataToFile(gaaList);
 

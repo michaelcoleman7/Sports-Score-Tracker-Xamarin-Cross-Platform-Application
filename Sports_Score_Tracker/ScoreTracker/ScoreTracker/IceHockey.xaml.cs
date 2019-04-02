@@ -45,7 +45,7 @@ namespace ScoreTracker
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
-            if (matchName.Text == null)
+            if (matchName.Text == null || matchName.Text.Trim() == "")
             {
                 //alert user they must enter a match name
                 await DisplayAlert("Save Requirement", "Match Name cannot be empty", "OK");
@@ -58,7 +58,7 @@ namespace ScoreTracker
                 existingList = MatchClass.ReadList();
 
                 //if no matches exist in existingList
-                if (existingList == null)
+                if (existingList == null )
                 {
                     //save match to file and return to main menu
                     SaveandReturn();
@@ -70,7 +70,7 @@ namespace ScoreTracker
                     foreach (var mc in existingList)
                     {
                         //if match name is found
-                        if (mc.MatchName == matchName.Text)
+                        if (mc.MatchName == matchName.Text.Trim())
                         {
                             matchExists = true;
                         }
@@ -95,7 +95,7 @@ namespace ScoreTracker
         private async void SaveandReturn()
         {
             //create new match class and add to hockeyList
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text.Trim());
             hockeyList.Add(mc);
             MatchClass.SaveMatchDataToFile(hockeyList);
 
