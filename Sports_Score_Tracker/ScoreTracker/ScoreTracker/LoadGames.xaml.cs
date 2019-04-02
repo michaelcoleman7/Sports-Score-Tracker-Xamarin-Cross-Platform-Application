@@ -88,6 +88,10 @@ namespace ScoreTracker
         {
             // set the binding context for each stacklayout to be the selected item on the listview
             ListItemGameType.BindingContext = (MatchClass)e.SelectedItem;
+            ListItemHomeTeam.BindingContext = (MatchClass)e.SelectedItem;
+            ListItemAwayTeam.BindingContext = (MatchClass)e.SelectedItem;
+            ListItemHomeScore.BindingContext = (MatchClass)e.SelectedItem;
+            ListItemAwayScore.BindingContext = (MatchClass)e.SelectedItem;
         }
     }
 }

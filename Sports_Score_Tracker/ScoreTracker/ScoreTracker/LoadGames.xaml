@@ -3,24 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScoreTracker.LoadGames">
 
-    <Grid>
+    <Grid BackgroundColor="Yellow">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="0.6*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <ListView x:Name="MatchesListView" Margin="3, 3, 3, 0"
                   ItemSelected="MatchesListView_ItemSelected"
-                  Grid.Row="1" Grid.Column="0" HasUnevenRows="True">
+                  Grid.Row="0" Grid.Column="0" HasUnevenRows="True" Grid.RowSpan="6">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -42,8 +49,41 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackLayout x:Name="ListItemGameType" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center">
+        <StackLayout x:Name="ListItemGameType" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalOptions="Center">
             <Label x:Name="gameTypelbl" Text="{Binding Path=GameType}" FontSize="Large" TextColor="Black" />
         </StackLayout>
+        <StackLayout x:Name="ListItemHomeTeam" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+            <Entry x:Name="homeTeamlbl" Text="{Binding Path=HomeTeam}" FontSize="15" HorizontalOptions="Fill"/>
+        </StackLayout>
+        <StackLayout x:Name="ListItemAwayTeam" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="2">
+            <Entry x:Name="awayTeamlbl" Text="{Binding Path=AwayTeam}" FontSize="15" HorizontalOptions="Fill"/>
+        </StackLayout>
+
+        <Label Text="-" FontSize="Large" HorizontalOptions="Center" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Label Text="Name:" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="Name:" FontSize="Medium" Grid.Row="1" Grid.Column="6"/>
+        <Label Text="Score:" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2" Grid.Column="1"/>
+        <Label Text="Score:" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2" Grid.Column="6"/>
+
+        <StackLayout x:Name="ListItemHomeScore" Grid.Row="2" Grid.Column="2">
+            <Frame BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry x:Name="homeScorelbl" Text="{Binding Path=HomeScore}" FontSize="15"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout x:Name="ListItemAwayScore" Grid.Row="2" Grid.Column="7">
+            <Frame BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry x:Name="awayScorelbl" Text="{Binding Path=AwayScore}" FontSize="15"/>
+            </Frame>
+        </StackLayout>
+
+        <!-- <Label Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
+            <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
+            <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black">
+                <Label x:Name="homeScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="3" BorderColor="Black">
+                <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+            </Frame>-->
     </Grid>
 </ContentPage>
