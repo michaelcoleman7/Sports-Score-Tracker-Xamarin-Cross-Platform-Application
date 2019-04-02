@@ -44,7 +44,7 @@ namespace ScoreTracker
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //create new match class and add to hockeyList
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text,matchName.Text);
             hockeyList.Add(mc);
             MatchClass.SaveMatchDataToFile(hockeyList);
 

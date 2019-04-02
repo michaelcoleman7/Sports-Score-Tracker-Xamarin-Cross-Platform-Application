@@ -86,7 +86,7 @@ namespace ScoreTracker
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //create new match class and add to rugbyList
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text,matchName.Text);
             rugbyList.Add(mc);
             MatchClass.SaveMatchDataToFile(rugbyList);
 

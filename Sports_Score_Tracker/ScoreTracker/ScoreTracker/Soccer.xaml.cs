@@ -44,7 +44,7 @@ namespace ScoreTracker
 
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text,matchName.Text);
             soccerList.Add(mc);
             MatchClass.SaveMatchDataToFile(soccerList);
 

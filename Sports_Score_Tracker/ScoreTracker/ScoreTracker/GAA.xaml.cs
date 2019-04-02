@@ -64,7 +64,7 @@ namespace ScoreTracker
             string homeScore = homeGoals.Text +"-"+ homePoints.Text;
             string awayScore = awayGoals.Text + "-" + awayPoints.Text;
             //create new match class and add to gaaList
-            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore, awayTeam.Text, awayScore);
+            MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore, awayTeam.Text, awayScore,matchName.Text);
             gaaList.Add(mc);
             MatchClass.SaveMatchDataToFile(gaaList);
 
