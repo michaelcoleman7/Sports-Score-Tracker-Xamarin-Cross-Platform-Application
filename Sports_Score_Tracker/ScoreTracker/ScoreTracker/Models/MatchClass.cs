@@ -13,16 +13,18 @@ namespace ScoreTracker.Models
         public string HomeScore { get; set; }
         public string AwayTeam { get; set; }
         public string AwayScore { get; set; }
+        public string MatchName { get; set; }
 
         public MatchClass() { }
 
-        public MatchClass(string gt, string ht, string hs, string awt, string aws)
+        public MatchClass(string gt, string ht, string hs, string awt, string aws, string matName)
         {
             GameType = gt;
             HomeTeam = ht;
             HomeScore = hs;
             AwayTeam = awt;
             AwayScore = aws;
+            MatchName = matName;
         }
 
         public static void SaveMatchDataToFile(List<MatchClass> list)
