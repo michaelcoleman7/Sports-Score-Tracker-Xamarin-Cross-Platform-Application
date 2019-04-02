@@ -22,6 +22,7 @@ namespace ScoreTracker
         }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> basketballList = new List<MatchClass>();
+        List<MatchClass> testList = new List<MatchClass>();
 
         private void AddHome2Points_Clicked(object sender, EventArgs e)
         {
@@ -65,19 +66,55 @@ namespace ScoreTracker
             }
             else
             {
-                //create new match class and add to hockeyList
-                MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text,matchName.Text);
-                basketballList.Add(s);
-                MatchClass.SaveMatchDataToFile(basketballList);
+                Boolean exists = false;
+                testList = MatchClass.ReadList();
+                if (testList == null)
+                {
+                    //create new match class and add to hockeyList
+                    MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text);
+                    basketballList.Add(s);
+                    MatchClass.SaveMatchDataToFile(basketballList);
 
-                //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
-                audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-                Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.BasketballBuzzer.mp3");
-                bool isSuccess = audioPlayer.Load(audioStream);
-                audioPlayer.Play();
+                    //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
+                    audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.BasketballBuzzer.mp3");
+                    bool isSuccess = audioPlayer.Load(audioStream);
+                    audioPlayer.Play();
 
-                //return to Mainpage
-                await Navigation.PushAsync(new MainPage());
+                    //return to Mainpage
+                    await Navigation.PushAsync(new MainPage());
+                }
+                else
+                {
+                    foreach (var mc in testList)
+                    {
+                        if (mc.MatchName == matchName.Text)
+                        {
+                            exists = true;
+                        }
+                    }
+
+                    if (exists)
+                    {
+                        await DisplayAlert("Alert", "Match Name already exists, please enter another", "OK");
+                    }
+                    else
+                    {
+                        //create new match class and add to hockeyList
+                        MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text);
+                        basketballList.Add(s);
+                        MatchClass.SaveMatchDataToFile(basketballList);
+
+                        //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
+                        audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                        Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.BasketballBuzzer.mp3");
+                        bool isSuccess = audioPlayer.Load(audioStream);
+                        audioPlayer.Play();
+
+                        //return to Mainpage
+                        await Navigation.PushAsync(new MainPage());
+                    }
+                }               
             }
 
         }

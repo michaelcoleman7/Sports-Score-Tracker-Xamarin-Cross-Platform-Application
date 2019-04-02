@@ -31,7 +31,7 @@ namespace ScoreTracker
         {
             if (matchList == null) matchList = new List<MatchClass>();
 
-            //call readlist function in order to populate matchList
+            //call readlist function from matchclass in order to populate matchList
             matchList = MatchClass.ReadList();
 
             // Set data context for the list view
