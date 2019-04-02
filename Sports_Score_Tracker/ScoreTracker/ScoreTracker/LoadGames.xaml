@@ -68,5 +68,8 @@
             <Label Text="Score:" FontSize="Medium" />
             <Entry x:Name="awayScorelbl" Text="{Binding Path=AwayScore}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
+
+        <Button Grid.Row="4" Grid.Column="1" Text="Save" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center"></Button>
+        <Button Grid.Row="4" Grid.Column="3" Text="Delete" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center"></Button>
     </Grid>
 </ContentPage>
