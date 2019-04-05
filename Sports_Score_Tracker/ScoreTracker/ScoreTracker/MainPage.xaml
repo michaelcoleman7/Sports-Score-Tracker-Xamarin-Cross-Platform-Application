@@ -15,12 +15,14 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Text="Sports Score Tracker" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+        <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="5" Aspect="AspectFill"/>
+
+        <Label x:Name="header" Text="Sports Score Tracker" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" />
         <Image x:Name="imgSoccer" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSoccer_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
@@ -51,7 +53,7 @@
                 <TapGestureRecognizer Tapped="ImgRugby_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Button x:Name="Matches_btn" Text="View Saved Matches" Grid.Row="4" Grid.Column="2" HeightRequest="100" VerticalOptions="Center" Clicked="Matches_btn_Clicked"></Button>
+        <Button x:Name="Matches_btn" BackgroundColor="White" Text="View Saved Matches" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HeightRequest="100" VerticalOptions="Center" Clicked="Matches_btn_Clicked"></Button>
     </Grid>
 
 </ContentPage>

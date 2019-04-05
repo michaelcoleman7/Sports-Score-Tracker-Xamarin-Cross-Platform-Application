@@ -18,9 +18,27 @@ namespace ScoreTracker
 
         private void SetupDefaults()
         {
-            //Setup paths for image sources
             var assembly = typeof(MainPage);
 
+            // add the image on the main page
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    header.FontSize = 25;
+                    header.TextColor = Color.White;
+                    string androidBackground = "ScoreTracker.Assets.Images.grass.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    break;
+                case Device.UWP:
+                    string uwpBackground = "ScoreTracker.Assets.Images.uwpback.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
+
+            //Setup paths for image sources
             string soccerImgPath = "ScoreTracker.Assets.Images.soccer.jpg";
             imgSoccer.Source = ImageSource.FromResource(soccerImgPath, assembly);
 
