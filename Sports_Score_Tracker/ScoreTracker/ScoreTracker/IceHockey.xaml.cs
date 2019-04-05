@@ -66,6 +66,8 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    hockeyList = MatchClass.ReadList();
+
                     //loop through each item in existing list and see if match name exists already
                     foreach (var mc in existingList)
                     {
@@ -93,7 +95,7 @@ namespace ScoreTracker
 
         //Method used to save match to file, play sound effect and return to main menu
         private async void SaveandReturn()
-        {
+        {        
             //create new match class and add to hockeyList
             MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text.Trim());
             hockeyList.Add(mc);

@@ -82,6 +82,7 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    basketballList = MatchClass.ReadList();
                     //loop through each item in existing list and see if match name exists already
                     foreach (var mc in existingList)
                     {

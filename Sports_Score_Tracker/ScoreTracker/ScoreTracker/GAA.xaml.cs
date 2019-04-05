@@ -84,6 +84,8 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    gaaList = MatchClass.ReadList();
+
                     //loop through each item in existing list and see if match name exists already
                     foreach (var mc in existingList)
                     {
