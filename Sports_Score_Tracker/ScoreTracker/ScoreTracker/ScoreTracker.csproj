@@ -20,6 +20,8 @@
     <None Remove="Assets\Images\icehockeyandroid.jpg" />
     <None Remove="Assets\Images\icehockeyuwp.jpg" />
     <None Remove="Assets\Images\rugby.jpg" />
+    <None Remove="Assets\Images\rugbyandroid.jpg" />
+    <None Remove="Assets\Images\Rugbyuwp.jpg" />
     <None Remove="Assets\Images\sliotar.jpg" />
     <None Remove="Assets\Images\soccer.jpg" />
     <None Remove="Assets\Images\soccerpitch.jpg" />
@@ -46,6 +48,8 @@
     <EmbeddedResource Include="Assets\Images\icehockeyandroid.jpg" />
     <EmbeddedResource Include="Assets\Images\icehockeyuwp.jpg" />
     <EmbeddedResource Include="Assets\Images\rugby.jpg" />
+    <EmbeddedResource Include="Assets\Images\rugbyandroid.jpg" />
+    <EmbeddedResource Include="Assets\Images\Rugbyuwp.jpg" />
     <EmbeddedResource Include="Assets\Images\sliotar.jpg" />
     <EmbeddedResource Include="Assets\Images\soccer.jpg" />
     <EmbeddedResource Include="Assets\Images\soccerpitch.jpg" />

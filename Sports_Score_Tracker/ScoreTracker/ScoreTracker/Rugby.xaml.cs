@@ -18,11 +18,38 @@ namespace ScoreTracker
         public Rugby()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            setupDefaults();
         }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> rugbyList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
+
+        public void setupDefaults()
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(Soccer);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.rugbyandroid.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    matchName.TextColor = Color.White;
+                    matchName.PlaceholderColor = Color.White;
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.Rugbyuwp.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
+        }
 
         //Add a try to the current home score
         private void AddHomeTry_Clicked(object sender, EventArgs e)
