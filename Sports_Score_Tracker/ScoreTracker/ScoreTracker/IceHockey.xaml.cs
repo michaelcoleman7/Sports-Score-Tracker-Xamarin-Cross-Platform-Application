@@ -18,11 +18,36 @@ namespace ScoreTracker
 		public IceHockey ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            setupDefaults();
         }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> hockeyList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
+
+        public void setupDefaults()
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(Soccer);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.icehockeyandroid.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.icehockeyuwp.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private void AddHome_Clicked(object sender, EventArgs e)
         {
