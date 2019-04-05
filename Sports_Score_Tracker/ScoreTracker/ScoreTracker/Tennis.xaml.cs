@@ -18,12 +18,39 @@ namespace ScoreTracker
 		public Tennis ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            setupDefaults();
         }
 
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> tennisList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
+
+        public void setupDefaults()
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(Tennis);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.tennisandroid.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    homeScore.TextColor = Color.Black;
+                    awayScore.TextColor = Color.Black;
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.tennisuwp.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private async void AddHome_Clicked(object sender, EventArgs e)
         {
