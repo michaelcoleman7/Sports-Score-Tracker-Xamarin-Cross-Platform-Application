@@ -18,12 +18,38 @@ namespace ScoreTracker
 		public GAA ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            setupDefaults();
         }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> gaaList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        public void setupDefaults()
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(GAA);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.sliotar.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    matchName.PlaceholderColor = Color.White;
+                    matchName.TextColor = Color.White;
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.gaauwp.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
+        }
         private void AddHome1Goal_Clicked(object sender, EventArgs e)
         {
             //Change homegoals text to string then convert to an integer - add 1, then set to text property

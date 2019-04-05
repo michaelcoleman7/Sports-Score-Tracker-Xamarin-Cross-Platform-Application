@@ -24,6 +24,8 @@
             <ColumnDefinition Width="0.25*" />
         </Grid.ColumnDefinitions>
 
+        <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="8" Aspect="AspectFill"/>
+
         <Label x:Name="gameType" Text="GAA" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" />
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         <Label Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
@@ -41,13 +43,13 @@
             <Label x:Name="awayPoints" Text="0" FontSize="30" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
 
-        <Button x:Name="AddHome1Goal" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="40" Clicked="AddHome1Goal_Clicked"/>
-        <Button x:Name="AddHome1Point" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="2" WidthRequest="40" Clicked="AddHome1Point_Clicked"/>
-        <Button x:Name="AddAway1Goal" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="4" WidthRequest="40" Clicked="AddAway1Goal_Clicked"/>
-        <Button x:Name="AddAway1Point" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="5" WidthRequest="40" Clicked="AddAway1Point_Clicked"/>
+        <Button x:Name="AddHome1Goal" Text="+" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="40" Clicked="AddHome1Goal_Clicked"/>
+        <Button x:Name="AddHome1Point" Text="+" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="2" WidthRequest="40" Clicked="AddHome1Point_Clicked"/>
+        <Button x:Name="AddAway1Goal" Text="+" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="4" WidthRequest="40" Clicked="AddAway1Goal_Clicked"/>
+        <Button x:Name="AddAway1Point" Text="+" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="20" Grid.Column="5" WidthRequest="40" Clicked="AddAway1Point_Clicked"/>
 
         <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3"></Entry>
-        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" FontSize="10" Grid.Row="6" Grid.Column="3" Clicked="SaveGame_Clicked"/>
+        <Button x:Name="SaveGame" Text="Save Game" BackgroundColor="LightGray" HorizontalOptions="Center" FontSize="10" Grid.Row="6" Grid.Column="3" Clicked="SaveGame_Clicked"/>
         
         
     </Grid>

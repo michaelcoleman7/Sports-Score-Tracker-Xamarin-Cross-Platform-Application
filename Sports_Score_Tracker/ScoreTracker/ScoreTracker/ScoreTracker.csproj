@@ -14,11 +14,13 @@
     <None Remove="Assets\Images\basketballcourt.jpg" />
     <None Remove="Assets\Images\Basketballuwp.jpg" />
     <None Remove="Assets\Images\gaa.jpg" />
+    <None Remove="Assets\Images\gaauwp.jpg" />
     <None Remove="Assets\Images\grass.jpg" />
     <None Remove="Assets\Images\icehockey.PNG" />
     <None Remove="Assets\Images\icehockeyandroid.jpg" />
     <None Remove="Assets\Images\icehockeyuwp.jpg" />
     <None Remove="Assets\Images\rugby.jpg" />
+    <None Remove="Assets\Images\sliotar.jpg" />
     <None Remove="Assets\Images\soccer.jpg" />
     <None Remove="Assets\Images\soccerpitch.jpg" />
     <None Remove="Assets\Images\socceruwp.jpg" />
@@ -38,11 +40,13 @@
     <EmbeddedResource Include="Assets\Images\basketballcourt.jpg" />
     <EmbeddedResource Include="Assets\Images\Basketballuwp.jpg" />
     <EmbeddedResource Include="Assets\Images\gaa.jpg" />
+    <EmbeddedResource Include="Assets\Images\gaauwp.jpg" />
     <EmbeddedResource Include="Assets\Images\grass.jpg" />
     <EmbeddedResource Include="Assets\Images\icehockey.PNG" />
     <EmbeddedResource Include="Assets\Images\icehockeyandroid.jpg" />
     <EmbeddedResource Include="Assets\Images\icehockeyuwp.jpg" />
     <EmbeddedResource Include="Assets\Images\rugby.jpg" />
+    <EmbeddedResource Include="Assets\Images\sliotar.jpg" />
     <EmbeddedResource Include="Assets\Images\soccer.jpg" />
     <EmbeddedResource Include="Assets\Images\soccerpitch.jpg" />
     <EmbeddedResource Include="Assets\Images\socceruwp.jpg" />
