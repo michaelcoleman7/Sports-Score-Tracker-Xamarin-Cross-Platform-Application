@@ -18,12 +18,40 @@ namespace ScoreTracker
 		public Basketball ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            setupDefaults();
         }
         private ISimpleAudioPlayer audioPlayer;
         List<MatchClass> basketballList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        public void setupDefaults()
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(Soccer);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.basketballcourt.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.Basketballuwp.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    //setup text colors for page elements
+                    gameType.TextColor = Color.White;
+                    homeScore.TextColor = Color.White;
+                    awayScore.TextColor = Color.White;
+                    break;
+                default:
+                    break;
+            }
+        }
         private void AddHome2Points_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 2, then set to text property

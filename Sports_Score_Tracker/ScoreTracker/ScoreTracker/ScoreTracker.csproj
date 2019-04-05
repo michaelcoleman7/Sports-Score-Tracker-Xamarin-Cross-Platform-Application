@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <None Remove="Assets\Images\basketball.jpg" />
+    <None Remove="Assets\Images\basketballcourt.jpg" />
+    <None Remove="Assets\Images\Basketballuwp.jpg" />
     <None Remove="Assets\Images\gaa.jpg" />
     <None Remove="Assets\Images\grass.jpg" />
     <None Remove="Assets\Images\icehockey.PNG" />
@@ -29,6 +31,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Images\basketball.jpg" />
+    <EmbeddedResource Include="Assets\Images\basketballcourt.jpg" />
+    <EmbeddedResource Include="Assets\Images\Basketballuwp.jpg" />
     <EmbeddedResource Include="Assets\Images\gaa.jpg" />
     <EmbeddedResource Include="Assets\Images\grass.jpg" />
     <EmbeddedResource Include="Assets\Images\icehockey.PNG" />
