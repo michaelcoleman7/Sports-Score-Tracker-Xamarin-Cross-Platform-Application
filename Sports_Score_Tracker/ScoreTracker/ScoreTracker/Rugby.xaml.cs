@@ -28,7 +28,7 @@ namespace ScoreTracker
         {
             NavigationPage.SetHasNavigationBar(this, false);
 
-            var assembly = typeof(Soccer);
+            var assembly = typeof(Rugby);
 
             // Choose between platform/build options for each device
             switch (Device.RuntimePlatform)

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScoreTracker.LoadGames">
 
+
     <Grid BackgroundColor="Yellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -19,6 +20,8 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
+
+        <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="6" Aspect="AspectFill"/>
 
         <ListView x:Name="MatchesListView" Margin="3, 3, 3, 0"
                   ItemSelected="MatchesListView_ItemSelected"
@@ -49,24 +52,24 @@
             <Label x:Name="matchNamelbl" Text="{Binding Path=MatchName}" FontSize="Large" TextColor="Black" FontAttributes="Italic" />
         </StackLayout>
         <StackLayout x:Name="ListItemHomeTeam" Grid.Row="1" Grid.Column="1">
-            <Label Text="Name:" FontSize="Medium"/>
+            <Label x:Name="homeNamelbl" Text="Name:" FontSize="Medium"/>
             <Entry x:Name="homeTeamlbl" Text="{Binding Path=HomeTeam}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
         
         <Label Text="-" FontSize="Large" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         
         <StackLayout x:Name="ListItemAwayTeam" Grid.Row="1" Grid.Column="3">
-            <Label Text="Name:" FontSize="Medium"/>
+            <Label x:Name="awayNamelbl" Text="Name:" FontSize="Medium"/>
             <Entry x:Name="awayTeamlbl" Text="{Binding Path=AwayTeam}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 
         <StackLayout x:Name="ListItemHomeScore" Grid.Row="2" Grid.Column="1">
-            <Label Text="Score:" FontSize="Medium"/>
+            <Label x:Name="homeSclbl" Text="Score:" FontSize="Medium"/>
             <Entry x:Name="homeScorelbl" Text="{Binding Path=HomeScore}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 
         <StackLayout x:Name="ListItemAwayScore" Grid.Row="2" Grid.Column="3">
-            <Label Text="Score:" FontSize="Medium" />
+            <Label x:Name="awaySclbl" Text="Score:" FontSize="Medium" />
             <Entry x:Name="awayScorelbl" Text="{Binding Path=AwayScore}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 

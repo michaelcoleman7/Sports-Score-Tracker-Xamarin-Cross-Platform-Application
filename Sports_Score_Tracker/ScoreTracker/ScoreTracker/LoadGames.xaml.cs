@@ -22,13 +22,46 @@ namespace ScoreTracker
 		{
 			InitializeComponent ();
             SetupDefaults();
-            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 
         //Method to set up default settings needed for page
         private void SetupDefaults()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(LoadGames);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.loadgamesandroid.png";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    homeScorelbl.TextColor = Color.White;
+                    awayScorelbl.TextColor = Color.White;
+                    homeTeamlbl.TextColor = Color.White;
+                    awayTeamlbl.TextColor = Color.White;
+                    homeSclbl.TextColor = Color.White;
+                    awaySclbl.TextColor = Color.White;
+                    homeNamelbl.TextColor = Color.White;
+                    awayNamelbl.TextColor = Color.White;
+                    
+
+                    //setup text colors for page elements
+                    //lvGameType.TextColor = Color.White;
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.loadgamesuwp.jpeg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
+
             if (matchList == null) matchList = new List<MatchClass>();
 
             //call readlist function from matchclass in order to populate matchList
