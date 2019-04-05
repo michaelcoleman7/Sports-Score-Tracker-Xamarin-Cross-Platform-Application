@@ -20,7 +20,7 @@ namespace ScoreTracker
         {
             var assembly = typeof(MainPage);
 
-            // add the image on the main page
+            // Choose between platform/build options for each device
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:

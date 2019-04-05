@@ -22,7 +22,40 @@ namespace ScoreTracker
         public Soccer()
         {
             InitializeComponent();
+            setupDefaults();
+        }
+
+        public void setupDefaults()
+        {
             NavigationPage.SetHasNavigationBar(this, false);
+
+            var assembly = typeof(Soccer);
+
+            // Choose between platform/build options for each device
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    //setup background image
+                    string androidBackground = "ScoreTracker.Assets.Images.soccerpitch.jpg";
+                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+
+                    //setup text colors for page elements
+                    gameType.TextColor = Color.White;
+                    homeTeam.TextColor = Color.White;
+                    awayTeam.TextColor = Color.White;
+                    dash.TextColor = Color.White;
+                    matchName.TextColor = Color.White;
+                    matchName.PlaceholderColor = Color.White;
+                    break;
+                case Device.UWP:
+                    //setup background image
+                    string uwpBackground = "ScoreTracker.Assets.Images.socceruwp.jpg";
+                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void AddHome_Clicked(object sender, EventArgs e)
