@@ -64,7 +64,23 @@ namespace ScoreTracker
             MatchesListView.ItemsSource = null;
             MatchesListView.ItemsSource = matchList;
 
-            MatchClass.SaveUpdatedMatchDataToFile(matchList);
+            MatchClass.SaveMatchDataToFile(matchList);
+        }
+
+        private void DeleteBtn_Clicked(object sender, EventArgs e)
+        {
+            //loops through each item in list, needs to be converted toList(), in order to delete during loop
+            foreach (var mc in matchList.ToList())
+            {
+                if (mc.MatchName == matchNamelbl.Text)
+                {
+                    matchList.Remove(mc);
+                }
+            }
+            MatchesListView.ItemsSource = null;
+            MatchesListView.ItemsSource = matchList;
+
+            MatchClass.SaveMatchDataToFile(matchList);
         }
     }
 }
