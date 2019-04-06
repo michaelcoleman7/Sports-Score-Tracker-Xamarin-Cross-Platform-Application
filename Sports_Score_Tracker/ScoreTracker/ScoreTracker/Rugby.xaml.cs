@@ -21,6 +21,7 @@ namespace ScoreTracker
             setupDefaults();
         }
         private ISimpleAudioPlayer audioPlayer;
+        bool soundOn = true;
         List<MatchClass> rugbyList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
@@ -29,6 +30,8 @@ namespace ScoreTracker
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(Rugby);
+            string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
+            imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
             // Choose between platform/build options for each device
             switch (Device.RuntimePlatform)
@@ -169,14 +172,42 @@ namespace ScoreTracker
             rugbyList.Add(s);
             MatchClass.SaveMatchDataToFile(rugbyList);
 
-            //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
-            audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-            Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.RugbyWhistle.mp3");
-            bool isSuccess = audioPlayer.Load(audioStream);
-            audioPlayer.Play();
+            //if the sound option is left/turned on via double clicking sound icon
+            if (soundOn)
+            {
+                //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
+                audioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                Stream audioStream = GetType().Assembly.GetManifestResourceStream("ScoreTracker.AudioFiles.RugbyWhistle.mp3");
+                bool isSuccess = audioPlayer.Load(audioStream);
+                audioPlayer.Play();
+            }
 
             //return to Mainpage
             await Navigation.PushAsync(new MainPage());
+        }
+
+        private void imgSound_Tapped(object sender, EventArgs e)
+        {
+            //if sound option is on, swap image to mute image
+            if (soundOn)
+            {
+                //set image source to mute
+                var assembly = typeof(Soccer);
+                string soundOption = "ScoreTracker.Assets.Images.mutedark.png";
+                imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+                //set sound option equal to false
+                soundOn = false;
+            }
+            //if sound option is turned off, swap image back to sound on image
+            else
+            {
+                //set image source to sound on icon
+                var assembly = typeof(Soccer);
+                string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
+                imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+                //set sound option equal to true
+                soundOn = true;
+            }
         }
     }
 }

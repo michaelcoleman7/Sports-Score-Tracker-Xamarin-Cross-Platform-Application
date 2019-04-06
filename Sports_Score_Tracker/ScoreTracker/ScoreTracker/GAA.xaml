@@ -26,6 +26,12 @@
 
         <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="8" Aspect="AspectFill"/>
 
+        <Image x:Name="imgSound" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="imgSound_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
         <Label x:Name="gameType" Text="GAA" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" />
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         <Label Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
