@@ -20,17 +20,21 @@ namespace ScoreTracker
 			InitializeComponent ();
             SetupDefaults();
         }
-
+        //Variables used throughout page
         private ISimpleAudioPlayer audioPlayer;
+        //bool variable needed for deciding to mute sound or not - on by default
         bool soundOn = true;
         List<MatchClass> tennisList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        //Method to setup default values needed for page setup
         public void SetupDefaults()
         {
+            //Turn off Navgation bar
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(Tennis);
+            //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
@@ -55,6 +59,7 @@ namespace ScoreTracker
             }
         }
 
+        //Method to add points to home team
         private async void AddHome_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
@@ -128,7 +133,7 @@ namespace ScoreTracker
                     //Add (W) to the winner of the deuce's name, so that it's clear who won the match
                     if (winner == homeTeam.Text)
                     {
-                        //add (W) to home team
+                        //add (W) to home team name
                         homeTeam.Text = homeTeam.Text + " (W)";
                     }
                     else if(winner == awayTeam.Text)
@@ -145,6 +150,7 @@ namespace ScoreTracker
             }
         }
 
+        //Method used to save game and ensure save requirments are met
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
@@ -169,6 +175,7 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    //games exist, therefore populate list with games for adding and saving later
                     tennisList = MatchClass.ReadList();
 
                     //loop through each item in existing list and see if match name exists already
@@ -218,6 +225,7 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
+        //Method to determine if sound should be played and which icon should be displayed - dblclick needed on image to change
         private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
