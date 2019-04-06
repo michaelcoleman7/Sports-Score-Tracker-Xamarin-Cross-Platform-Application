@@ -111,7 +111,7 @@ namespace ScoreTracker
             //If match name is left empty by user
             if (matchName.Text == null || matchName.Text.Trim() == "")
             {
-                //Alert user they must enter a match name
+                //Alert user they must enter a match name - referenced - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/pop-ups
                 await DisplayAlert("Save Requirement", "Match Name cannot be empty", "OK");
             }
             else

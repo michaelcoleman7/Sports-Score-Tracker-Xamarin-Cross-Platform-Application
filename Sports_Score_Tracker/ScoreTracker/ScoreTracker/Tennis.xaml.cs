@@ -86,7 +86,7 @@ namespace ScoreTracker
 
                 if (awayScore.Text == "40")
                 {
-                    //Display an alert which returns the user selected value
+                    //Display an alert which returns the user selected value - referenced https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/pop-ups
                     string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, homeTeam.Text, awayTeam.Text);
 
                     //Add (W) to the winner of the deuce's name, so that it's clear who won the match
