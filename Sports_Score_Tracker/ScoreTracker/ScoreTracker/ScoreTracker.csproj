@@ -23,6 +23,7 @@
     <None Remove="Assets\Images\loadgamesuwp.jpeg" />
     <None Remove="Assets\Images\mutedark.png" />
     <None Remove="Assets\Images\mutelight.png" />
+    <None Remove="Assets\Images\reset.png" />
     <None Remove="Assets\Images\rugby.jpg" />
     <None Remove="Assets\Images\rugbyandroid.jpg" />
     <None Remove="Assets\Images\Rugbyuwp.jpg" />
@@ -57,6 +58,7 @@
     <EmbeddedResource Include="Assets\Images\loadgamesuwp.jpeg" />
     <EmbeddedResource Include="Assets\Images\mutedark.png" />
     <EmbeddedResource Include="Assets\Images\mutelight.png" />
+    <EmbeddedResource Include="Assets\Images\reset.png" />
     <EmbeddedResource Include="Assets\Images\rugby.jpg" />
     <EmbeddedResource Include="Assets\Images\rugbyandroid.jpg" />
     <EmbeddedResource Include="Assets\Images\Rugbyuwp.jpg" />

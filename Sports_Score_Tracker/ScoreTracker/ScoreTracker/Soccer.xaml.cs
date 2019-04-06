@@ -40,6 +40,9 @@ namespace ScoreTracker
             string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
+            string ResetImage = "ScoreTracker.Assets.Images.reset.png";
+            imgReset.Source = ImageSource.FromResource(ResetImage, assembly);
+
 
             // Choose between platform/build options for each device
             switch (Device.RuntimePlatform)
@@ -186,6 +189,12 @@ namespace ScoreTracker
                 //set sound option equal to true
                 soundOn = true;
             }
+        }
+
+        private void ImgReset_Tapped(object sender, EventArgs e)
+        {
+            homeScore.Text = "0";
+            awayScore.Text = "0";
         }
     }
 }

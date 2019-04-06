@@ -30,6 +30,9 @@
             </Image.GestureRecognizers>
         </Image>
 
+        <Image x:Name="imgReset" Grid.Row="0" Grid.Column="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ImgReset_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
         <Label x:Name="gameType" Text="Soccer" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
         <Label x:Name="dash" Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
@@ -46,7 +49,5 @@
 
         <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="6" Grid.Column="2" Clicked="SaveGame_Clicked"/>
-
-
     </Grid>
 </ContentPage>
