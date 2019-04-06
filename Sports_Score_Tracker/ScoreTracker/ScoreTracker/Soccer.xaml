@@ -5,21 +5,21 @@
     
     <Grid BackgroundColor="LightGreen">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.3*" />
-            <RowDefinition Height="0.3*" />
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8" Aspect="AspectFill"/>
@@ -30,7 +30,7 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Label x:Name="gameType" Text="Soccer" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+        <Label x:Name="gameType" Text="Soccer" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
         <Label x:Name="dash" Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
@@ -44,7 +44,7 @@
         <Button x:Name="AddHome" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome_Clicked"/>
         <Button x:Name="AddAway" Text="+" HorizontalOptions="Center" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway_Clicked"/>
 
-        <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"></Entry>
+        <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" Grid.Row="6" Grid.Column="2" Clicked="SaveGame_Clicked"/>
 
 

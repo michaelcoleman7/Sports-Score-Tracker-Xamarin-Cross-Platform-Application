@@ -15,19 +15,24 @@ namespace ScoreTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Soccer : ContentPage
     {
+        //Variables needed throughout page
         private ISimpleAudioPlayer audioPlayer;
+        //bool variable needed for deciding to mute sound or not - on by default
+        bool soundOn = true;
         List<MatchClass> soccerList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        //Page Constructor
         public Soccer()
         {
             InitializeComponent();
             SetupDefaults();
         }
-        bool soundOn = true;
 
+        //Method to setup default values needed for page setup
         public void SetupDefaults()
         {
+            //Turn off navigation page
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(Soccer);
@@ -40,11 +45,11 @@ namespace ScoreTracker
             {
                 case Device.iOS:
                 case Device.Android:
-                    //setup background image
+                    //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.soccerpitch.jpg";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
 
-                    //setup text colors for page elements
+                    //setup text colors for page elements for android
                     gameType.TextColor = Color.White;
                     homeTeam.TextColor = Color.White;
                     awayTeam.TextColor = Color.White;
@@ -53,7 +58,7 @@ namespace ScoreTracker
                     matchName.PlaceholderColor = Color.White;
                     break;
                 case Device.UWP:
-                    //setup background image
+                    //setup background image for UWP
                     string uwpBackground = "ScoreTracker.Assets.Images.socceruwp.jpg";
                     imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
@@ -104,6 +109,7 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    //games exist, therefore populate list with games for adding and saving later
                     soccerList = MatchClass.ReadList();
 
                     //loop through each item in existing list and see if match name exists already
@@ -154,6 +160,7 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
+        //Method to determine if sound should be played and which icon should be displayed - dblclick needed on image to change
         private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
