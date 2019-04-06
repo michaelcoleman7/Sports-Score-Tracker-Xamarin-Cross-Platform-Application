@@ -40,6 +40,8 @@ namespace ScoreTracker
                     //setup background image
                     string androidBackground = "ScoreTracker.Assets.Images.loadgamesandroid.png";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+
+                    //setup text colors for page elements
                     homeScorelbl.TextColor = Color.White;
                     awayScorelbl.TextColor = Color.White;
                     homeTeamlbl.TextColor = Color.White;
@@ -48,10 +50,6 @@ namespace ScoreTracker
                     awaySclbl.TextColor = Color.White;
                     homeNamelbl.TextColor = Color.White;
                     awayNamelbl.TextColor = Color.White;
-                    
-
-                    //setup text colors for page elements
-                    //lvGameType.TextColor = Color.White;
                     break;
                 case Device.UWP:
                     //setup background image
