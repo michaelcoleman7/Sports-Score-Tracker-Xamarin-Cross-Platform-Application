@@ -18,7 +18,7 @@ namespace ScoreTracker
 		public GAA ()
 		{
 			InitializeComponent ();
-            setupDefaults();
+            SetupDefaults();
         }
         //variables needed throughout page
         private ISimpleAudioPlayer audioPlayer;
@@ -28,7 +28,7 @@ namespace ScoreTracker
         List<MatchClass> existingList = new List<MatchClass>();
 
         //Method to setup default values needed for page setup
-        public void setupDefaults()
+        public void SetupDefaults()
         {
             //Turn off navigation bar
             NavigationPage.SetHasNavigationBar(this, false);
@@ -175,7 +175,7 @@ namespace ScoreTracker
         }
 
         //Method to determine if sound should be played and which icon should be displayed - dblclick needed on image to change
-        private void imgSound_Tapped(object sender, EventArgs e)
+        private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
             if (soundOn)

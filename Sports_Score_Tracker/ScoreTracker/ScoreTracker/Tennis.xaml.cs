@@ -18,7 +18,7 @@ namespace ScoreTracker
 		public Tennis ()
 		{
 			InitializeComponent ();
-            setupDefaults();
+            SetupDefaults();
         }
 
         private ISimpleAudioPlayer audioPlayer;
@@ -26,7 +26,7 @@ namespace ScoreTracker
         List<MatchClass> tennisList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
-        public void setupDefaults()
+        public void SetupDefaults()
         {
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -218,13 +218,13 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
-        private void imgSound_Tapped(object sender, EventArgs e)
+        private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
             if (soundOn)
             {
                 //set image source to mute
-                var assembly = typeof(Soccer);
+                var assembly = typeof(Tennis);
                 string soundOption = "ScoreTracker.Assets.Images.mutelight.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to false
@@ -234,7 +234,7 @@ namespace ScoreTracker
             else
             {
                 //set image source to sound on icon
-                var assembly = typeof(Soccer);
+                var assembly = typeof(Tennis);
                 string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to true

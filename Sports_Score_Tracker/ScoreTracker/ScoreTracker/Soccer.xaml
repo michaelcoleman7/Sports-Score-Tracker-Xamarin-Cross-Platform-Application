@@ -26,7 +26,7 @@
 
         <Image x:Name="imgSound" Grid.Row="0" Grid.Column="4">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="imgSound_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
+                <TapGestureRecognizer Tapped="ImgSound_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
 

@@ -22,11 +22,11 @@ namespace ScoreTracker
         public Soccer()
         {
             InitializeComponent();
-            setupDefaults();
+            SetupDefaults();
         }
         bool soundOn = true;
 
-        public void setupDefaults()
+        public void SetupDefaults()
         {
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -154,7 +154,7 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
-        private void imgSound_Tapped(object sender, EventArgs e)
+        private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
             if (soundOn)

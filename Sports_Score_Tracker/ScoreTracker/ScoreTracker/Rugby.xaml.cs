@@ -18,14 +18,14 @@ namespace ScoreTracker
         public Rugby()
         {
             InitializeComponent();
-            setupDefaults();
+            SetupDefaults();
         }
         private ISimpleAudioPlayer audioPlayer;
         bool soundOn = true;
         List<MatchClass> rugbyList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
-        public void setupDefaults()
+        public void SetupDefaults()
         {
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -186,13 +186,13 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
-        private void imgSound_Tapped(object sender, EventArgs e)
+        private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
             if (soundOn)
             {
                 //set image source to mute
-                var assembly = typeof(Soccer);
+                var assembly = typeof(Rugby);
                 string soundOption = "ScoreTracker.Assets.Images.mutedark.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to false
@@ -202,7 +202,7 @@ namespace ScoreTracker
             else
             {
                 //set image source to sound on icon
-                var assembly = typeof(Soccer);
+                var assembly = typeof(Rugby);
                 string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to true
