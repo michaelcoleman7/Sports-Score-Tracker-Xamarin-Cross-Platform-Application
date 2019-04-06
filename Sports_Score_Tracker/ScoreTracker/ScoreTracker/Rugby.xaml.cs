@@ -20,16 +20,21 @@ namespace ScoreTracker
             InitializeComponent();
             SetupDefaults();
         }
+        //Variables needed throughout page
         private ISimpleAudioPlayer audioPlayer;
+        //bool variable needed for deciding to mute sound or not - on by default
         bool soundOn = true;
         List<MatchClass> rugbyList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        //Method to setup default values needed for page setup
         public void SetupDefaults()
         {
+            //Turn off navigation bar
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(Rugby);
+            //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
@@ -38,14 +43,14 @@ namespace ScoreTracker
             {
                 case Device.iOS:
                 case Device.Android:
-                    //setup background image
+                    //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.rugbyandroid.jpg";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     matchName.TextColor = Color.White;
                     matchName.PlaceholderColor = Color.White;
                     break;
                 case Device.UWP:
-                    //setup background image
+                    //setup background image for UWP
                     string uwpBackground = "ScoreTracker.Assets.Images.Rugbyuwp.jpg";
                     imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
@@ -54,7 +59,7 @@ namespace ScoreTracker
             }
         }
 
-        //Add a try to the current home score
+        //Method to add a try to the current home score
         private void AddHomeTry_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 5, then set to text property
@@ -64,7 +69,7 @@ namespace ScoreTracker
             homeScore.Text = addscore.ToString();
         }
 
-        //add a conversion to the current home score
+        //Method to add a conversion to the current home score
         private void AddHomeConversion_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 2, then set to text property
@@ -74,7 +79,7 @@ namespace ScoreTracker
             homeScore.Text = addscore.ToString();
         }
 
-        //add a goal kick to the current home score
+        //Method to add a goal kick to the current home score
         private void AddHomeGoalKick_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
@@ -84,7 +89,7 @@ namespace ScoreTracker
             homeScore.Text = addscore.ToString();
         }
 
-        //Add a try to the current away score
+        //Method to add a try to the current away score
         private void AddAwayTry_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 5, then set to text property
@@ -94,7 +99,7 @@ namespace ScoreTracker
             awayScore.Text = addscore.ToString();
         }
 
-        //add a conversion to the current away score
+        //Method to add a conversion to the current away score
         private void AddAwayConversion_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 2, then set to text property
@@ -104,7 +109,7 @@ namespace ScoreTracker
             awayScore.Text = addscore.ToString();
         }
 
-        //add a goal kick to the current away score
+        //Method to add a goal kick to the current away score
         private void AddAwayGoalKick_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
@@ -114,6 +119,7 @@ namespace ScoreTracker
             awayScore.Text = addscore.ToString();
         }
 
+        //Method to save game and ensure requirements are met in order to save
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
@@ -138,6 +144,7 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    //games exist, therefore populate list with games for adding and saving later
                     rugbyList = MatchClass.ReadList();
                     //loop through each item in existing list and see if match name exists already
                     foreach (var mc in existingList)
@@ -186,6 +193,7 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
+        //Method to determine if sound should be played and which icon should be displayed - dblclick needed on image to change
         private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
