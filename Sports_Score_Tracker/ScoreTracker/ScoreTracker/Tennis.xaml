@@ -30,6 +30,12 @@
             </Image.GestureRecognizers>
         </Image>
 
+        <Image x:Name="imgReset" Grid.Row="0" Grid.Column="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ImgReset_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
+
         <Label x:Name="gameType" Text="Tennis" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
         <Label Text="-" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>

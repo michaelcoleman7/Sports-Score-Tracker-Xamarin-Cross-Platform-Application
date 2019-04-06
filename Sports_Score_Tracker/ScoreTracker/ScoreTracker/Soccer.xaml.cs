@@ -40,6 +40,7 @@ namespace ScoreTracker
             string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
+            //Set reset image source
             string ResetImage = "ScoreTracker.Assets.Images.reset.png";
             imgReset.Source = ImageSource.FromResource(ResetImage, assembly);
 
@@ -191,6 +192,7 @@ namespace ScoreTracker
             }
         }
 
+        //Method to reset scores
         private void ImgReset_Tapped(object sender, EventArgs e)
         {
             homeScore.Text = "0";
