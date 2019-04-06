@@ -40,16 +40,8 @@ namespace ScoreTracker
                     //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.loadgamesandroid.png";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
-
-                    //setup text colors for page elements for android
-                    homeScorelbl.TextColor = Color.White;
-                    awayScorelbl.TextColor = Color.White;
-                    homeTeamlbl.TextColor = Color.White;
-                    awayTeamlbl.TextColor = Color.White;
-                    homeSclbl.TextColor = Color.White;
-                    awaySclbl.TextColor = Color.White;
-                    homeNamelbl.TextColor = Color.White;
-                    awayNamelbl.TextColor = Color.White;
+                    //Setup android colour scheme
+                    SetAndroidColours();
                     break;
                 case Device.UWP:
                     //setup background image for uwp
@@ -121,6 +113,20 @@ namespace ScoreTracker
 
             //Save deletion to file
             MatchClass.SaveMatchDataToFile(matchList);
+        }
+
+        //Method to set up colours for UWP elements
+        private void SetAndroidColours()
+        {
+            //setup text colors for page elements for android
+            homeScorelbl.TextColor = Color.White;
+            awayScorelbl.TextColor = Color.White;
+            homeTeamlbl.TextColor = Color.White;
+            awayTeamlbl.TextColor = Color.White;
+            homeSclbl.TextColor = Color.White;
+            awaySclbl.TextColor = Color.White;
+            homeNamelbl.TextColor = Color.White;
+            awayNamelbl.TextColor = Color.White;
         }
     }
 }
