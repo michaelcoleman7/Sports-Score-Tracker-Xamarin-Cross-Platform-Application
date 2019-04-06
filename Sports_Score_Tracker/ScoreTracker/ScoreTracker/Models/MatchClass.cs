@@ -12,15 +12,18 @@ namespace ScoreTracker.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //setup strings for use with INotifyPropertyChanged
         private string _homeTeam;
         private string _awayTeam;
         private string _homeScore;
         private string _awayScore;
 
+        //getters/setters for variables of MatchMlass
         public string GameType { get; set; }
         public string HomeTeam
         {
             get { return _homeTeam; }
+            //set using INotifyPropertyChanged
             set
             {
                 if (_homeTeam == value) return;
@@ -31,6 +34,7 @@ namespace ScoreTracker.Models
         public string HomeScore
         {
             get { return _homeScore; }
+            //set using INotifyPropertyChanged
             set
             {
                 if (_homeScore == value) return;
@@ -41,6 +45,7 @@ namespace ScoreTracker.Models
         public string AwayTeam
         {
             get { return _awayTeam; }
+            //set using INotifyPropertyChanged
             set
             {
                 if (_awayTeam == value) return;
@@ -52,6 +57,7 @@ namespace ScoreTracker.Models
         public string AwayScore
         {
             get { return _awayScore; }
+            //set using INotifyPropertyChanged
             set
             {
                 if (_awayScore == value) return;
@@ -61,10 +67,13 @@ namespace ScoreTracker.Models
         }
         public string MatchName { get; set; }
 
+        //Default Constructor
         public MatchClass() { }
 
+        //Constructor with variables needed for a matchclass
         public MatchClass(string gt, string ht, string hs, string awt, string aws, string matName)
         {
+            //assign MatchClass variables to values recieved
             GameType = gt;
             HomeTeam = ht;
             HomeScore = hs;
@@ -73,9 +82,12 @@ namespace ScoreTracker.Models
             MatchName = matName;
         }
 
+        //Method to save data to a file
         public static void SaveMatchDataToFile(List<MatchClass> list)
         {
+            //Setup path for files
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            //setup file name using path and filename
             string filename = Path.Combine(path, "SavedGames.txt");
 
             // Will create new file when doesn't exist
@@ -89,12 +101,13 @@ namespace ScoreTracker.Models
 
         }
 
-            public static List<MatchClass> ReadList()
+        //Method to read the file and return it in a list of MatchClasses
+        public static List<MatchClass> ReadList()
         {
             List<MatchClass> myList = new List<MatchClass>();
             string jsonText;
 
-            // Read localApplicationFolder
+            //try Read localApplicationFolder
             try
             {
                 string path = Environment.GetFolderPath(
@@ -134,6 +147,7 @@ namespace ScoreTracker.Models
             return myList;
         }
 
+        //Method to implement INotifyPropertyChanged
         private void OnPropertyChanged(string propertyName)
         {
             //if propertychanged ==null do nothing, otherwise invoke the propertychanged event handler with two arguments
