@@ -22,7 +22,7 @@
 
         <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="5" Aspect="AspectFill"/>
 
-        <Label x:Name="header" Text="Sports Score Tracker" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Label x:Name="header" Text="Sports Score Tracker" LineBreakMode="TailTruncation" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Image x:Name="imgSoccer" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSoccer_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
