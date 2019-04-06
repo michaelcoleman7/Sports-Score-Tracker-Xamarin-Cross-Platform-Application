@@ -18,7 +18,7 @@ namespace ScoreTracker
         //Method to setup default values needed for page setup
         private void SetupDefaults()
         {
-            //turn off navigation bar at top of application
+            //turn off navigation bar at top of application - referenced - https://stackoverflow.com/questions/36656895/remove-navigation-bar-on-xamarin-forms-app-with-caliburn-micro 
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(MainPage);

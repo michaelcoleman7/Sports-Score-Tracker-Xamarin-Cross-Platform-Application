@@ -9,6 +9,7 @@ using Android.OS;
 
 namespace ScoreTracker.Droid
 {
+    //Orientation changed - referenced - https://www.youtube.com/watch?v=xA6-FKL73PQ
     [Activity(Label = "ScoreTracker", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {

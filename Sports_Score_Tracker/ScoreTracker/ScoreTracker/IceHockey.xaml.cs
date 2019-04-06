@@ -119,7 +119,7 @@ namespace ScoreTracker
                         }
                     }
 
-                    //if name already exists display alert
+                    //if name already exists display alert - referenced - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/pop-ups
                     if (matchExists)
                     {
                         await DisplayAlert("Duplication Error", "Match Name already exists, please enter another", "OK");
