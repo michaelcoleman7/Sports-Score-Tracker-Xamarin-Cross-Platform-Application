@@ -22,12 +22,12 @@ namespace ScoreTracker
 		{
 			InitializeComponent ();
             SetupDefaults();
-
         }
 
         //Method to set up default settings needed for page
         private void SetupDefaults()
         {
+            //turn off navigation bar
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(LoadGames);
@@ -37,11 +37,11 @@ namespace ScoreTracker
             {
                 case Device.iOS:
                 case Device.Android:
-                    //setup background image
+                    //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.loadgamesandroid.png";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
 
-                    //setup text colors for page elements
+                    //setup text colors for page elements for android
                     homeScorelbl.TextColor = Color.White;
                     awayScorelbl.TextColor = Color.White;
                     homeTeamlbl.TextColor = Color.White;
@@ -52,24 +52,25 @@ namespace ScoreTracker
                     awayNamelbl.TextColor = Color.White;
                     break;
                 case Device.UWP:
-                    //setup background image
+                    //setup background image for uwp
                     string uwpBackground = "ScoreTracker.Assets.Images.loadgamesuwp.jpeg";
                     imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
                 default:
                     break;
             }
-
+            //if null, create a new List of MatchClasses
             if (matchList == null) matchList = new List<MatchClass>();
 
-            //call readlist function from matchclass in order to populate matchList
+            //call Readlist function from matchclass in order to populate matchList
             matchList = MatchClass.ReadList();
 
-            // Set data context for the list view
+            // Set item source for the list view
             MatchesListView.ItemsSource = matchList;
 
         }
 
+        //Method for binding data from list view to elements to edit data
         private void MatchesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             // set the binding context for each stacklayout to be the selected item on the listview
@@ -80,7 +81,8 @@ namespace ScoreTracker
             ListItemAwayScore.BindingContext = (MatchClass)e.SelectedItem;
         }
 
-        private void SaveBtn_Clicked(object sender, EventArgs e)
+        //Method to update data based on the information entered by the user 
+        private void UpdateBtn_Clicked(object sender, EventArgs e)
         {
             foreach (var mc in matchList)
             {
@@ -92,25 +94,32 @@ namespace ScoreTracker
                     mc.AwayScore = awayScorelbl.Text;
                 }
             }
+            //Refresh list view
             MatchesListView.ItemsSource = null;
             MatchesListView.ItemsSource = matchList;
 
+            //Save updated data to file
             MatchClass.SaveMatchDataToFile(matchList);
         }
 
+        //Method to delete the selected match from the list view and save deletion
         private void DeleteBtn_Clicked(object sender, EventArgs e)
         {
             //loops through each item in list, needs to be converted toList(), in order to delete during loop
             foreach (var mc in matchList.ToList())
             {
+                //if MatchClass in list'd matchName is equal to matchNamelbl.Text (equal to user selected items name)
                 if (mc.MatchName == matchNamelbl.Text)
                 {
+                    //remove MatchClass from list
                     matchList.Remove(mc);
                 }
             }
+            //Refresh list view
             MatchesListView.ItemsSource = null;
             MatchesListView.ItemsSource = matchList;
 
+            //Save deletion to file
             MatchClass.SaveMatchDataToFile(matchList);
         }
     }

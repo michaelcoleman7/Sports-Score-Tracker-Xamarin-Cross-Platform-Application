@@ -8,17 +8,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="1.5*" />
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
         <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="6" Aspect="AspectFill"/>
@@ -34,12 +34,12 @@
                                 <Label Text="{Binding Path=GameType}" FontSize="Small" FontAttributes="Bold"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="2, 1">
-                                <Label Text="{Binding Path=HomeTeam}" />
-                                <Label Text="{Binding Path=HomeScore}" />
+                                <Label Text="{Binding Path=HomeTeam}"/>
+                                <Label Text="{Binding Path=HomeScore}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="2, 1">
-                                <Label Text="{Binding Path=AwayTeam}" />
-                                <Label Text="{Binding Path=AwayScore}" />
+                                <Label Text="{Binding Path=AwayTeam}"/>
+                                <Label Text="{Binding Path=AwayScore}"/>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
@@ -48,8 +48,8 @@
         </ListView>
 
         <StackLayout x:Name="ListItemGameType" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Grid.ColumnSpan="3">
-            <Label x:Name="gameTypelbl" Text="{Binding Path=GameType}" FontSize="Large" TextColor="Black" />
-            <Label x:Name="matchNamelbl" Text="{Binding Path=MatchName}" FontSize="Large" TextColor="Black" FontAttributes="Italic" />
+            <Label x:Name="gameTypelbl" Text="{Binding Path=GameType}" FontSize="Large" TextColor="Black"/>
+            <Label x:Name="matchNamelbl" Text="{Binding Path=MatchName}" FontSize="Large" TextColor="Black" FontAttributes="Italic"/>
         </StackLayout>
         <StackLayout x:Name="ListItemHomeTeam" Grid.Row="1" Grid.Column="1">
             <Label x:Name="homeNamelbl" Text="Name:" FontSize="Medium"/>
@@ -69,11 +69,11 @@
         </StackLayout>
 
         <StackLayout x:Name="ListItemAwayScore" Grid.Row="2" Grid.Column="3">
-            <Label x:Name="awaySclbl" Text="Score:" FontSize="Medium" />
+            <Label x:Name="awaySclbl" Text="Score:" FontSize="Medium"/>
             <Entry x:Name="awayScorelbl" Text="{Binding Path=AwayScore}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 
-        <Button x:Name="saveBtn" Grid.Row="4" Grid.Column="1" Text="Save" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="SaveBtn_Clicked"></Button>
+        <Button x:Name="updateBtn" Grid.Row="4" Grid.Column="1" Text="Update" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="UpdateBtn_Clicked"></Button>
         <Button x:Name="deleteBtn" Grid.Row="4" Grid.Column="3" Text="Delete" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="DeleteBtn_Clicked"></Button>
     </Grid>
 </ContentPage>
