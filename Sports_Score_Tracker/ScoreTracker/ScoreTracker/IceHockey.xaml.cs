@@ -18,18 +18,23 @@ namespace ScoreTracker
 		public IceHockey ()
 		{
 			InitializeComponent ();
-            setupDefaults();
+            SetupDefaults();
         }
+        //variables used throughout page
         private ISimpleAudioPlayer audioPlayer;
+        //bool variable needed for deciding to mute sound or not - on by default
         bool soundOn = true;
         List<MatchClass> hockeyList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
-        public void setupDefaults()
+        //Method to setup default values needed for page setup
+        public void SetupDefaults()
         {
+            //Turn off navigation bar
             NavigationPage.SetHasNavigationBar(this, false);
 
-            var assembly = typeof(Soccer);
+            var assembly = typeof(IceHockey);
+            //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
@@ -38,12 +43,12 @@ namespace ScoreTracker
             {
                 case Device.iOS:
                 case Device.Android:
-                    //setup background image
+                    //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.icehockeyandroid.jpg";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     break;
                 case Device.UWP:
-                    //setup background image
+                    //setup background image for UWP
                     string uwpBackground = "ScoreTracker.Assets.Images.icehockeyuwp.jpg";
                     imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
@@ -52,6 +57,7 @@ namespace ScoreTracker
             }
         }
 
+        //Method to add a goal to the home score
         private void AddHome_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
@@ -61,6 +67,7 @@ namespace ScoreTracker
             homeScore.Text = addscore.ToString();
         }
 
+        //Method to add a goal to the away score
         private void AddAway_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
@@ -70,6 +77,7 @@ namespace ScoreTracker
             awayScore.Text = addscore.ToString();
         }
 
+        //Method to save game and ensure requiremnets are met in order to save
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
@@ -94,6 +102,7 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    //games exist, therefore populate list with games for adding and saving later
                     hockeyList = MatchClass.ReadList();
 
                     //loop through each item in existing list and see if match name exists already
@@ -144,13 +153,14 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
-        private void imgSound_Tapped(object sender, EventArgs e)
+        //Method to determine if sound should be played and which icon should be displayed - dblclick needed on image to change
+        private void ImgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
             if (soundOn)
             {
                 //set image source to mute
-                var assembly = typeof(Soccer);
+                var assembly = typeof(IceHockey);
                 string soundOption = "ScoreTracker.Assets.Images.mutedark.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to false
@@ -160,7 +170,7 @@ namespace ScoreTracker
             else
             {
                 //set image source to sound on icon
-                var assembly = typeof(Soccer);
+                var assembly = typeof(IceHockey);
                 string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to true
