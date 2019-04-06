@@ -1,19 +1,64 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Reflection;
 using System.Text;
 
 namespace ScoreTracker.Models
 {
-    class MatchClass
+    class MatchClass : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private string _homeTeam;
+        private string _awayTeam;
+        private string _homeScore;
+        private string _awayScore;
+
         public string GameType { get; set; }
-        public string HomeTeam { get; set; }
-        public string HomeScore { get; set; }
-        public string AwayTeam { get; set; }
-        public string AwayScore { get; set; }
+        public string HomeTeam
+        {
+            get { return _homeTeam; }
+            set
+            {
+                if (_homeTeam == value) return;
+                _homeTeam = value;
+                OnPropertyChanged(nameof(HomeTeam));
+            }
+        }
+        public string HomeScore
+        {
+            get { return _homeScore; }
+            set
+            {
+                if (_homeScore == value) return;
+                _homeScore = value;
+                OnPropertyChanged(nameof(HomeScore));
+            }
+        }
+        public string AwayTeam
+        {
+            get { return _awayTeam; }
+            set
+            {
+                if (_awayTeam == value) return;
+                _awayTeam = value;
+                OnPropertyChanged(nameof(AwayTeam));
+            }
+        }
+
+        public string AwayScore
+        {
+            get { return _awayScore; }
+            set
+            {
+                if (_awayScore == value) return;
+                _awayScore = value;
+                OnPropertyChanged(nameof(AwayScore));
+            }
+        }
         public string MatchName { get; set; }
 
         public MatchClass() { }
@@ -87,6 +132,12 @@ namespace ScoreTracker.Models
             //deserialize json text into myList and return myList
             myList = JsonConvert.DeserializeObject<List<MatchClass>>(jsonText);
             return myList;
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            //if propertychanged ==null do nothing, otherwise invoke the propertychanged event handler with two arguments
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
