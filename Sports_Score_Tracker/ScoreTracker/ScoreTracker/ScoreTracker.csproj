@@ -22,6 +22,7 @@
     <None Remove="Assets\Images\loadgamesandroid.png" />
     <None Remove="Assets\Images\loadgamesuwp.jpeg" />
     <None Remove="Assets\Images\mutedark.png" />
+    <None Remove="Assets\Images\mutelight.png" />
     <None Remove="Assets\Images\rugby.jpg" />
     <None Remove="Assets\Images\rugbyandroid.jpg" />
     <None Remove="Assets\Images\Rugbyuwp.jpg" />
@@ -30,6 +31,7 @@
     <None Remove="Assets\Images\soccerpitch.jpg" />
     <None Remove="Assets\Images\socceruwp.jpg" />
     <None Remove="Assets\Images\soundondark.png" />
+    <None Remove="Assets\Images\soundonlight.png" />
     <None Remove="Assets\Images\tennisandroid.jpg" />
     <None Remove="Assets\Images\tennisball.png" />
     <None Remove="Assets\Images\tennisuwp.jpg" />
@@ -54,6 +56,7 @@
     <EmbeddedResource Include="Assets\Images\loadgamesandroid.png" />
     <EmbeddedResource Include="Assets\Images\loadgamesuwp.jpeg" />
     <EmbeddedResource Include="Assets\Images\mutedark.png" />
+    <EmbeddedResource Include="Assets\Images\mutelight.png" />
     <EmbeddedResource Include="Assets\Images\rugby.jpg" />
     <EmbeddedResource Include="Assets\Images\rugbyandroid.jpg" />
     <EmbeddedResource Include="Assets\Images\Rugbyuwp.jpg" />
@@ -62,6 +65,7 @@
     <EmbeddedResource Include="Assets\Images\soccerpitch.jpg" />
     <EmbeddedResource Include="Assets\Images\socceruwp.jpg" />
     <EmbeddedResource Include="Assets\Images\soundondark.png" />
+    <EmbeddedResource Include="Assets\Images\soundonlight.png" />
     <EmbeddedResource Include="Assets\Images\tennisandroid.jpg" />
     <EmbeddedResource Include="Assets\Images\tennisball.png" />
     <EmbeddedResource Include="Assets\Images\tennisuwp.jpg" />
