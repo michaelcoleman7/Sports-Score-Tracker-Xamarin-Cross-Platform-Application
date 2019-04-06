@@ -36,6 +36,7 @@ namespace ScoreTracker
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(Soccer);
+            //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
@@ -67,6 +68,7 @@ namespace ScoreTracker
             }
         }
 
+        //Method to add a goal to home team
         private void AddHome_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
@@ -76,6 +78,7 @@ namespace ScoreTracker
             homeScore.Text = addscore.ToString();
         }
 
+        //Method to add a goal to away team
         private void AddAway_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
