@@ -30,7 +30,7 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Label x:Name="gameType" Text="Basketball" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+        <Label x:Name="gameType" Text="Basketball" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
         <Label Text="-" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>

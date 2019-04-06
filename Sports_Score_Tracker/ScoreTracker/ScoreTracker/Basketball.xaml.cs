@@ -27,6 +27,7 @@ namespace ScoreTracker
         List<MatchClass> basketballList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        //Method to setup default values needed for page setup
         public void setupDefaults()
         {
             //Turn off navigation bar
@@ -100,7 +101,7 @@ namespace ScoreTracker
             awayScore.Text = addscore.ToString();
         }
 
-        //Method to save game and ensure requirments are met in order to save
+        //Method to save game and ensure requirements are met in order to save
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //If match name is left empty by user
@@ -125,6 +126,7 @@ namespace ScoreTracker
                 //If matches are loaded into existingList
                 else
                 {
+                    //games exist, therefore populate list with games for adding and saving later
                     basketballList = MatchClass.ReadList();
                     //Loop through each item in existing list and see if match name exists already
                     foreach (var mc in existingList)
@@ -180,7 +182,7 @@ namespace ScoreTracker
             if (soundOn)
             {
                 //Set image source to mute
-                var assembly = typeof(Soccer);
+                var assembly = typeof(Basketball);
                 string soundOption = "ScoreTracker.Assets.Images.mutelight.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //Set sound option equal to false
@@ -190,7 +192,7 @@ namespace ScoreTracker
             else
             {
                 //Set image source to sound on icon
-                var assembly = typeof(Soccer);
+                var assembly = typeof(Basketball);
                 string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //Set sound option equal to true

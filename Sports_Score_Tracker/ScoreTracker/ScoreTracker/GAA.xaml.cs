@@ -20,16 +20,21 @@ namespace ScoreTracker
 			InitializeComponent ();
             setupDefaults();
         }
+        //variables needed throughout page
         private ISimpleAudioPlayer audioPlayer;
+        //bool variable needed for deciding to mute sound or not - on by default
         bool soundOn = true;
         List<MatchClass> gaaList = new List<MatchClass>();
         List<MatchClass> existingList = new List<MatchClass>();
 
+        //Method to setup default values needed for page setup
         public void setupDefaults()
         {
+            //Turn off navigation bar
             NavigationPage.SetHasNavigationBar(this, false);
 
             var assembly = typeof(GAA);
+            //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
             imgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
@@ -38,14 +43,14 @@ namespace ScoreTracker
             {
                 case Device.iOS:
                 case Device.Android:
-                    //setup background image
+                    //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.sliotar.jpg";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     matchName.PlaceholderColor = Color.White;
                     matchName.TextColor = Color.White;
                     break;
                 case Device.UWP:
-                    //setup background image
+                    //setup background image for android
                     string uwpBackground = "ScoreTracker.Assets.Images.gaauwp.jpg";
                     imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
@@ -53,6 +58,8 @@ namespace ScoreTracker
                     break;
             }
         }
+
+        //Method to add a goal to the home team score
         private void AddHome1Goal_Clicked(object sender, EventArgs e)
         {
             //Change homegoals text to string then convert to an integer - add 1, then set to text property
@@ -62,6 +69,7 @@ namespace ScoreTracker
             homeGoals.Text = addscore.ToString();
         }
 
+        //Method to add a point to the home team score
         private void AddHome1Point_Clicked(object sender, EventArgs e)
         {
             //Change homepoints text to string then convert to an integer - add 1, then set to text property
@@ -71,6 +79,7 @@ namespace ScoreTracker
             homePoints.Text = addscore.ToString();
         }
 
+        //Method to add a goal to the away team score
         private void AddAway1Goal_Clicked(object sender, EventArgs e)
         {
             //Change awaygoals text to string then convert to an integer - add 1, then set to text property
@@ -80,6 +89,7 @@ namespace ScoreTracker
             awayGoals.Text = addscore.ToString();
         }
 
+        //Method to add a point to the away team score
         private void AddAway1Point_Clicked(object sender, EventArgs e)
         {
             //Change awaypoints text to string then convert to an integer - add 1, then set to text property
@@ -89,6 +99,7 @@ namespace ScoreTracker
             awayPoints.Text = addscore.ToString();
         }
 
+        //Method to save game and ensure requirements are met in order to save
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
@@ -113,6 +124,7 @@ namespace ScoreTracker
                 //if matches are loaded into existingList
                 else
                 {
+                    //games exist, therefore populate list with games for adding and saving later
                     gaaList = MatchClass.ReadList();
 
                     //loop through each item in existing list and see if match name exists already
@@ -143,11 +155,14 @@ namespace ScoreTracker
         //Method used to save match to file, play sound effect and return to main menu
         private async void SaveandReturn()
         {
+            //combine goals and points to produce overall scores
             string homeScore = homeGoals.Text + "-" + homePoints.Text;
             string awayScore = awayGoals.Text + "-" + awayPoints.Text;
+
             //create new match class and add to gaaList
             MatchClass mc = new MatchClass(gameType.Text, homeTeam.Text, homeScore, awayTeam.Text, awayScore, matchName.Text.Trim());
             gaaList.Add(mc);
+            //save gaaList to file
             MatchClass.SaveMatchDataToFile(gaaList);
 
             //Add audio to application when game is saved - referenced from https://forums.xamarin.com/discussion/145050/beep-in-xamarin
@@ -159,13 +174,14 @@ namespace ScoreTracker
             await Navigation.PushAsync(new MainPage());
         }
 
+        //Method to determine if sound should be played and which icon should be displayed - dblclick needed on image to change
         private void imgSound_Tapped(object sender, EventArgs e)
         {
             //if sound option is on, swap image to mute image
             if (soundOn)
             {
                 //set image source to mute
-                var assembly = typeof(Soccer);
+                var assembly = typeof(GAA);
                 string soundOption = "ScoreTracker.Assets.Images.mutedark.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to false
@@ -175,7 +191,7 @@ namespace ScoreTracker
             else
             {
                 //set image source to sound on icon
-                var assembly = typeof(Soccer);
+                var assembly = typeof(GAA);
                 string soundOption = "ScoreTracker.Assets.Images.soundondark.png";
                 imgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to true
