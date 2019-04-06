@@ -13,11 +13,14 @@ namespace ScoreTracker
         {
             InitializeComponent();
             SetupDefaults();
-            NavigationPage.SetHasNavigationBar(this, false);
         }
 
+        //Method to setup default values needed for page setup
         private void SetupDefaults()
         {
+            //turn off navigation bar at top of application
+            NavigationPage.SetHasNavigationBar(this, false);
+
             var assembly = typeof(MainPage);
 
             // Choose between platform/build options for each device
@@ -25,12 +28,15 @@ namespace ScoreTracker
             {
                 case Device.iOS:
                 case Device.Android:
+                    //change header font and text colour for android
                     header.FontSize = 25;
                     header.TextColor = Color.White;
+                    //set background image source for android
                     string androidBackground = "ScoreTracker.Assets.Images.grass.jpg";
                     imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     break;
                 case Device.UWP:
+                    //set background image source for UWP
                     string uwpBackground = "ScoreTracker.Assets.Images.uwpback.jpg";
                     imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
@@ -61,41 +67,41 @@ namespace ScoreTracker
 
         private async void ImgSoccer_Tapped(object sender, EventArgs e)
         {
-            //naviage to the Soccer.xaml page
+            //Navigate to the Soccer.xaml page
             await Navigation.PushAsync(new Soccer());
         }
 
         private async void Matches_btn_Clicked(object sender, EventArgs e)
         {
-            //naviage to the LoadGames.xaml page
+            //Navigate to the LoadGames.xaml page
             await Navigation.PushAsync(new LoadGames());
         }
 
         private async void ImgHockey_Tapped(object sender, EventArgs e)
         {
-            //naviage to the IceHockey.xaml page
+            //Navigate to the IceHockey.xaml page
             await Navigation.PushAsync(new IceHockey());
         }
 
         private async void ImgBasketball_Tapped(object sender, EventArgs e)
         {
-            //naviage to the Basketball.xaml page
+            //Navigate to the Basketball.xaml page
             await Navigation.PushAsync(new Basketball());
         }
         private async void ImgTennis_Tapped(object sender, EventArgs e)
         {
-            //naviage to the Tennis.xaml page
+            //Navigate to the Tennis.xaml page
             await Navigation.PushAsync(new Tennis());
         }
 
         private async void ImgGAA_Tapped(object sender, EventArgs e)
         {
-            //naviage to the GAA.xaml page
+            //Navigate to the GAA.xaml page
             await Navigation.PushAsync(new GAA());
         }
         private async void ImgRugby_Tapped(object sender, EventArgs e)
         {
-            //naviage to the Rugby.xaml page
+            //Navigate to the Rugby.xaml page
             await Navigation.PushAsync(new Rugby());
         }
     }

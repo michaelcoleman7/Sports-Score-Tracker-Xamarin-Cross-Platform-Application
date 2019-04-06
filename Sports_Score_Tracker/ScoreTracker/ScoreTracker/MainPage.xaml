@@ -6,23 +6,23 @@
 
     <Grid BackgroundColor="DarkGreen">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="5" Aspect="AspectFill"/>
 
-        <Label x:Name="header" Text="Sports Score Tracker" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+        <Label x:Name="header" Text="Sports Score Tracker" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Image x:Name="imgSoccer" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSoccer_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
@@ -42,7 +42,7 @@
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgHockey_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
-        </Image> 
+        </Image>
         <Image x:Name="imgGaa" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgGAA_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
@@ -53,7 +53,6 @@
                 <TapGestureRecognizer Tapped="ImgRugby_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Button x:Name="Matches_btn" BorderRadius="20" BackgroundColor="White" Text="View Saved Matches" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HeightRequest="100" VerticalOptions="Center" Clicked="Matches_btn_Clicked"></Button>
+        <Button x:Name="Matches_btn" BorderRadius="20" BackgroundColor="White" Text="View Saved Matches" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HeightRequest="100" VerticalOptions="Center" Clicked="Matches_btn_Clicked"/>
     </Grid>
-
 </ContentPage>

@@ -11,6 +11,7 @@ namespace ScoreTracker
         {
             InitializeComponent();
 
+            //Make Mainpage a NavigationPage for navigation to other pages
             MainPage = new NavigationPage(new MainPage());
         }
 
