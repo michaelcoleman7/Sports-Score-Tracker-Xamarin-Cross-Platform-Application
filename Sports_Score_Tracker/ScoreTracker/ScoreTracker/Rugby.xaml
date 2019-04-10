@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScoreTracker.Rugby">
     
-    <Grid BackgroundColor="PaleVioletRed">
+    <Grid BackgroundColor="PaleGreen">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.5*"/>

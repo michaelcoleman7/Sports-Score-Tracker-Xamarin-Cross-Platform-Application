@@ -8,7 +8,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.5*"/>
@@ -16,27 +16,27 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1.5*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8" Aspect="AspectFill"/>
 
-        <Image x:Name="imgSound" Grid.Row="0" Grid.Column="4">
+        <Image x:Name="imgSound" Grid.Row="0" Grid.Column="4" VerticalOptions="Start">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSound_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
 
-        <Image x:Name="imgReset" Grid.Row="0" Grid.Column="0">
+        <Image x:Name="imgReset" Grid.Row="0" Grid.Column="0" VerticalOptions="Start">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgReset_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
 
-        <Label x:Name="gameType" Text="Basketball" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label x:Name="gameType" Text="Basketball" FontSize="50" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
         <Label Text="-" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="White" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
@@ -47,12 +47,14 @@
             <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
 
-        <Button x:Name="AddHome2Points" Text="+2" BackgroundColor="LightGray" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" Clicked="AddHome2Points_Clicked"/>
-        <Button x:Name="AddHome3Points" Text="+3" BackgroundColor="LightGray" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="1" WidthRequest="50" Clicked="AddHome3Points_Clicked"/>
-        <Button x:Name="AddAway2Points" Text="+2" BackgroundColor="LightGray" HorizontalOptions="Start" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" Clicked="AddAway2Points_Clicked"/>
-        <Button x:Name="AddAway3Points" Text="+3" BackgroundColor="LightGray" HorizontalOptions="End" Grid.Row="3" FontSize="20" Grid.Column="3" WidthRequest="50" Clicked="AddAway3Points_Clicked"/>
+        <Button x:Name="AddHome1Point" Text="+1" BackgroundColor="LightGray" HorizontalOptions="Start" Grid.Row="3" FontSize="14" Grid.Column="1" WidthRequest="40" Clicked="AddHome1Point_Clicked"/>
+        <Button x:Name="AddHome2Points" Text="+2" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="14" Grid.Column="1" WidthRequest="40" Clicked="AddHome2Points_Clicked"/>
+        <Button x:Name="AddHome3Points" Text="+3" BackgroundColor="LightGray" HorizontalOptions="End" Grid.Row="3" FontSize="14" Grid.Column="1" WidthRequest="40" Clicked="AddHome3Points_Clicked"/>
+        <Button x:Name="AddAway1Point" Text="+1" BackgroundColor="LightGray" HorizontalOptions="Start" Grid.Row="3" FontSize="14" Grid.Column="3" WidthRequest="40" Clicked="AddAway1Point_Clicked"/>
+        <Button x:Name="AddAway2Points" Text="+2" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="14" Grid.Column="3" WidthRequest="40" Clicked="AddAway2Points_Clicked"/>
+        <Button x:Name="AddAway3Points" Text="+3" BackgroundColor="LightGray" HorizontalOptions="End" Grid.Row="3" FontSize="14" Grid.Column="3" WidthRequest="40" Clicked="AddAway3Points_Clicked"/>
 
         <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"></Entry>
-        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" BackgroundColor="LightGray" Grid.Row="6" Grid.Column="2" Clicked="SaveGame_Clicked"/>
+        <Button x:Name="SaveGame" Text="Save Game" HorizontalOptions="Center" BackgroundColor="LightGray" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Clicked="SaveGame_Clicked"/>
     </Grid>
 </ContentPage>

@@ -65,6 +65,16 @@ namespace ScoreTracker
             }
         }
 
+        //Method to add a 1 point to the home team score
+        private void AddHome1Point_Clicked(object sender, EventArgs e)
+        {
+            //Change homescore text to string then convert to an integer - add 2, then set to text property
+            string score = homeScore.Text.ToString();
+            int addscore = Convert.ToInt32(score);
+            addscore = addscore + 1;
+            homeScore.Text = addscore.ToString();
+        }
+
         //Method to add a 2 pointer to the home team score
         private void AddHome2Points_Clicked(object sender, EventArgs e)
         {
@@ -83,6 +93,16 @@ namespace ScoreTracker
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 3;
             homeScore.Text = addscore.ToString();
+        }
+
+        //Method to add a 1 point to the away team score
+        private void AddAway1Point_Clicked(object sender, EventArgs e)
+        {
+            //Change awayscore text to string then convert to an integer - add 2, then set to text property
+            string score = awayScore.Text.ToString();
+            int addscore = Convert.ToInt32(score);
+            addscore = addscore + 1;
+            awayScore.Text = addscore.ToString();
         }
 
         //Method to add a 2 pointer to the away team score
