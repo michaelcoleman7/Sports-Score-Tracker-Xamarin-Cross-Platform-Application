@@ -21,7 +21,7 @@
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="6" Aspect="AspectFill"/>
+        <Image x:Name="ImgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="6" Aspect="AspectFill"/>
 
         <ListView x:Name="MatchesListView" Margin="3, 3, 3, 0"
                   ItemSelected="MatchesListView_ItemSelected"
@@ -48,32 +48,32 @@
         </ListView>
 
         <StackLayout x:Name="ListItemGameType" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Grid.ColumnSpan="3">
-            <Label x:Name="gameTypelbl" Text="{Binding Path=GameType}" FontSize="Large" TextColor="Black"/>
-            <Label x:Name="matchNamelbl" Text="{Binding Path=MatchName}" FontSize="Large" TextColor="Black" FontAttributes="Italic"/>
+            <Label x:Name="GameTypelbl" Text="{Binding Path=GameType}" FontSize="50" HorizontalOptions="Center"  TextColor="Black"/>
+            <Label x:Name="MatchNamelbl" Text="{Binding Path=MatchName}" FontSize="Large" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
         </StackLayout>
         <StackLayout x:Name="ListItemHomeTeam" Grid.Row="1" Grid.Column="1">
-            <Label x:Name="homeNamelbl" Text="Name:" FontSize="Medium"/>
-            <Entry x:Name="homeTeamlbl" Text="{Binding Path=HomeTeam}" FontSize="15" HorizontalOptions="Fill"/>
+            <Label x:Name="HomeNamelbl" Text="Name:" FontSize="Medium"/>
+            <Entry x:Name="HomeTeamlbl" Text="{Binding Path=HomeTeam}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
         
         <Label Text="-" FontSize="Large" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
         
         <StackLayout x:Name="ListItemAwayTeam" Grid.Row="1" Grid.Column="3">
-            <Label x:Name="awayNamelbl" Text="Name:" FontSize="Medium"/>
-            <Entry x:Name="awayTeamlbl" Text="{Binding Path=AwayTeam}" FontSize="15" HorizontalOptions="Fill"/>
+            <Label x:Name="AwayNamelbl" Text="Name:" FontSize="Medium"/>
+            <Entry x:Name="AwayTeamlbl" Text="{Binding Path=AwayTeam}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 
         <StackLayout x:Name="ListItemHomeScore" Grid.Row="2" Grid.Column="1">
-            <Label x:Name="homeSclbl" Text="Score:" FontSize="Medium"/>
-            <Entry x:Name="homeScorelbl" Text="{Binding Path=HomeScore}" FontSize="15" HorizontalOptions="Fill"/>
+            <Label x:Name="HomeSclbl" Text="Score:" FontSize="Medium"/>
+            <Entry x:Name="HomeScorelbl" Text="{Binding Path=HomeScore}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 
         <StackLayout x:Name="ListItemAwayScore" Grid.Row="2" Grid.Column="3">
-            <Label x:Name="awaySclbl" Text="Score:" FontSize="Medium"/>
-            <Entry x:Name="awayScorelbl" Text="{Binding Path=AwayScore}" FontSize="15" HorizontalOptions="Fill"/>
+            <Label x:Name="AwaySclbl" Text="Score:" FontSize="Medium"/>
+            <Entry x:Name="AwayScorelbl" Text="{Binding Path=AwayScore}" FontSize="15" HorizontalOptions="Fill"/>
         </StackLayout>
 
-        <Button x:Name="updateBtn" Grid.Row="4" Grid.Column="1" Text="Update" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="UpdateBtn_Clicked"></Button>
-        <Button x:Name="deleteBtn" Grid.Row="4" Grid.Column="3" Text="Delete" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="DeleteBtn_Clicked"></Button>
+        <Button Grid.Row="4" Grid.Column="1" Text="Update" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="UpdateBtn_Clicked"></Button>
+        <Button Grid.Row="4" Grid.Column="3" Text="Delete" WidthRequest="120" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center" Clicked="DeleteBtn_Clicked"></Button>
     </Grid>
 </ContentPage>

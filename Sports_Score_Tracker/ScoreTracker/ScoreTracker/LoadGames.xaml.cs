@@ -39,14 +39,14 @@ namespace ScoreTracker
                 case Device.Android:
                     //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.loadgamesandroid.png";
-                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     //Setup android colour scheme
                     SetAndroidColours();
                     break;
                 case Device.UWP:
                     //setup background image for uwp
                     string uwpBackground = "ScoreTracker.Assets.Images.loadgamesuwp.jpeg";
-                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
                 default:
                     break;
@@ -78,12 +78,12 @@ namespace ScoreTracker
         {
             foreach (var mc in matchList)
             {
-                if (mc.MatchName == matchNamelbl.Text)
+                if (mc.MatchName == MatchNamelbl.Text)
                 {
-                    mc.HomeTeam = homeTeamlbl.Text;
-                    mc.HomeScore = homeScorelbl.Text;
-                    mc.AwayTeam = awayTeamlbl.Text;
-                    mc.AwayScore = awayScorelbl.Text;
+                    mc.HomeTeam = HomeTeamlbl.Text;
+                    mc.HomeScore = HomeScorelbl.Text;
+                    mc.AwayTeam = AwayTeamlbl.Text;
+                    mc.AwayScore = AwayScorelbl.Text;
                 }
             }
             //Refresh list view
@@ -101,7 +101,7 @@ namespace ScoreTracker
             foreach (var mc in matchList.ToList())
             {
                 //if MatchClass in list'd matchName is equal to matchNamelbl.Text (equal to user selected items name)
-                if (mc.MatchName == matchNamelbl.Text)
+                if (mc.MatchName == MatchNamelbl.Text)
                 {
                     //remove MatchClass from list
                     matchList.Remove(mc);
@@ -119,14 +119,14 @@ namespace ScoreTracker
         private void SetAndroidColours()
         {
             //setup text colors for page elements for android
-            homeScorelbl.TextColor = Color.White;
-            awayScorelbl.TextColor = Color.White;
-            homeTeamlbl.TextColor = Color.White;
-            awayTeamlbl.TextColor = Color.White;
-            homeSclbl.TextColor = Color.White;
-            awaySclbl.TextColor = Color.White;
-            homeNamelbl.TextColor = Color.White;
-            awayNamelbl.TextColor = Color.White;
+            HomeScorelbl.TextColor = Color.White;
+            AwayScorelbl.TextColor = Color.White;
+            HomeTeamlbl.TextColor = Color.White;
+            AwayTeamlbl.TextColor = Color.White;
+            HomeSclbl.TextColor = Color.White;
+            AwaySclbl.TextColor = Color.White;
+            HomeNamelbl.TextColor = Color.White;
+            AwayNamelbl.TextColor = Color.White;
         }
     }
 }

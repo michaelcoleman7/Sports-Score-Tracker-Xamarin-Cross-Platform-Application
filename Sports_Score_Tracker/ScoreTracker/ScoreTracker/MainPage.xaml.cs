@@ -29,16 +29,16 @@ namespace ScoreTracker
                 case Device.iOS:
                 case Device.Android:
                     //change header font and text colour for android
-                    header.FontSize = 25;
-                    header.TextColor = Color.White;
+                    Header.FontSize = 25;
+                    Header.TextColor = Color.White;
                     //set background image source for android
                     string androidBackground = "ScoreTracker.Assets.Images.grass.jpg";
-                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     break;
                 case Device.UWP:
                     //set background image source for UWP
                     string uwpBackground = "ScoreTracker.Assets.Images.uwpback.jpg";
-                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
                 default:
                     break;
@@ -46,22 +46,22 @@ namespace ScoreTracker
 
             //Setup paths for image sources
             string soccerImgPath = "ScoreTracker.Assets.Images.soccer.jpg";
-            imgSoccer.Source = ImageSource.FromResource(soccerImgPath, assembly);
+            ImgSoccer.Source = ImageSource.FromResource(soccerImgPath, assembly);
 
             string basketballImgPath = "ScoreTracker.Assets.Images.basketball.jpg";
-            imgBasketball.Source = ImageSource.FromResource(basketballImgPath, assembly);
+            ImgBasketball.Source = ImageSource.FromResource(basketballImgPath, assembly);
 
             string tennisImgPath = "ScoreTracker.Assets.Images.tennisball.png";
-            imgTennis.Source = ImageSource.FromResource(tennisImgPath, assembly);
+            ImgTennis.Source = ImageSource.FromResource(tennisImgPath, assembly);
 
             string hockeyImgPath = "ScoreTracker.Assets.Images.icehockey.PNG";
-            imgHockey.Source = ImageSource.FromResource(hockeyImgPath, assembly);
+            ImgHockey.Source = ImageSource.FromResource(hockeyImgPath, assembly);
 
             string gaaImgPath = "ScoreTracker.Assets.Images.gaa.jpg";
-            imgGaa.Source = ImageSource.FromResource(gaaImgPath, assembly);
+            ImgGaa.Source = ImageSource.FromResource(gaaImgPath, assembly);
 
             string rugbyImgPath = "ScoreTracker.Assets.Images.rugby.jpg";
-            imgRugby.Source = ImageSource.FromResource(rugbyImgPath, assembly);
+            ImgRugby.Source = ImageSource.FromResource(rugbyImgPath, assembly);
 
         }
 

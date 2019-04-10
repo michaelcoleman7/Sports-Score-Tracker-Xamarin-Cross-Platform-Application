@@ -36,11 +36,11 @@ namespace ScoreTracker
             var assembly = typeof(Tennis);
             //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
-            imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+            ImgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
             //Set reset image source
             string ResetImage = "ScoreTracker.Assets.Images.reset.png";
-            imgReset.Source = ImageSource.FromResource(ResetImage, assembly);
+            ImgReset.Source = ImageSource.FromResource(ResetImage, assembly);
 
             // Choose between platform/build options for each device
             switch (Device.RuntimePlatform)
@@ -49,14 +49,14 @@ namespace ScoreTracker
                 case Device.Android:
                     //setup background image
                     string androidBackground = "ScoreTracker.Assets.Images.tennisandroid.jpg";
-                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
-                    homeScore.TextColor = Color.Black;
-                    awayScore.TextColor = Color.Black;
+                    ImgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    HomeScorelbl.TextColor = Color.Black;
+                    AwayScorelbl.TextColor = Color.Black;
                     break;
                 case Device.UWP:
                     //setup background image
                     string uwpBackground = "ScoreTracker.Assets.Images.tennisuwp.jpg";
-                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     break;
                 default:
                     break;
@@ -67,7 +67,7 @@ namespace ScoreTracker
         private async void AddHome_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 1, then set to text property
-            string score = homeScore.Text.ToString();
+            string score = HomeScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
 
             //Add 15 to score for 1st 2 scores
@@ -75,30 +75,30 @@ namespace ScoreTracker
             {
                 //add to score and update homeScore text
                 addscore = addscore + 15;
-                homeScore.Text = addscore.ToString();
+                HomeScorelbl.Text = addscore.ToString();
             }
             //add 10 to 3rd score
             else if (addscore == 30)
             {
                 //add to score and update homeScore text
                 addscore = addscore + 10;
-                homeScore.Text = addscore.ToString();
+                HomeScorelbl.Text = addscore.ToString();
 
-                if (awayScore.Text == "40")
+                if (AwayScorelbl.Text == "40")
                 {
                     //Display an alert which returns the user selected value - referenced https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/pop-ups
-                    string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, homeTeam.Text, awayTeam.Text);
+                    string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, HomeTeamlbl.Text, AwayTeamlbl.Text);
 
                     //Add (W) to the winner of the deuce's name, so that it's clear who won the match
-                    if (winner == homeTeam.Text)
+                    if (winner == HomeTeamlbl.Text)
                     {
                         //add (W) to home team
-                        homeTeam.Text = homeTeam.Text + " (W)";
+                        HomeTeamlbl.Text = HomeTeamlbl.Text + " (W)";
                     }
-                    else if (winner == awayTeam.Text)
+                    else if (winner == AwayTeamlbl.Text)
                     {
                         //add (W) to away team name
-                        awayTeam.Text = awayTeam.Text + " (W)";
+                        AwayTeamlbl.Text = AwayTeamlbl.Text + " (W)";
                     }
                 }
             }
@@ -112,38 +112,38 @@ namespace ScoreTracker
         private async void AddAway_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 1, then set to text property
-            string score = awayScore.Text.ToString();
+            string score = AwayScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             //Add 15 to score for 1st 2 scores
             if (addscore == 0 || addscore == 15)
             {
                 //add to score and update awayScore text
                 addscore = addscore + 15;
-                awayScore.Text = addscore.ToString();
+                AwayScorelbl.Text = addscore.ToString();
             }
             //add 10 to 3rd score
             else if (addscore == 30)
             {
                 //add to score and update awayScore text
                 addscore = addscore + 10;
-                awayScore.Text = addscore.ToString();
+                AwayScorelbl.Text = addscore.ToString();
 
                 //Handle Deuce encounter and decide a winner
-                if (homeScore.Text == "40")
+                if (HomeScorelbl.Text == "40")
                 {
                     //Display an alert which returns the user selected value
-                    string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, homeTeam.Text, awayTeam.Text);
+                    string winner = await DisplayActionSheet("Deuce: Select who wins Deuce?", "Cancel", null, HomeTeamlbl.Text, AwayTeamlbl.Text);
 
                     //Add (W) to the winner of the deuce's name, so that it's clear who won the match
-                    if (winner == homeTeam.Text)
+                    if (winner == HomeTeamlbl.Text)
                     {
                         //add (W) to home team name
-                        homeTeam.Text = homeTeam.Text + " (W)";
+                        HomeTeamlbl.Text = HomeTeamlbl.Text + " (W)";
                     }
-                    else if(winner == awayTeam.Text)
+                    else if(winner == AwayTeamlbl.Text)
                     {
                         //add (W) to away team name
-                        awayTeam.Text = awayTeam.Text + " (W)";
+                        AwayTeamlbl.Text = AwayTeamlbl.Text + " (W)";
                     }    
                 }
             }
@@ -158,7 +158,7 @@ namespace ScoreTracker
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //if match name is left empty by user
-            if (matchName.Text == null || matchName.Text.Trim() == "")
+            if (MatchNamelbl.Text == null || MatchNamelbl.Text.Trim() == "")
             {
                 //alert user they must enter a match name
                 await DisplayAlert("Save Requirement", "Match Name cannot be empty", "OK");
@@ -186,7 +186,7 @@ namespace ScoreTracker
                     foreach (var mc in existingList)
                     {
                         //if match name is found
-                        if (mc.MatchName == matchName.Text.Trim())
+                        if (mc.MatchName == MatchNamelbl.Text.Trim())
                         {
                             matchExists = true;
                         }
@@ -211,7 +211,7 @@ namespace ScoreTracker
         private async void SaveandReturn()
         {
             //create new match class and add to tennisList
-            MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text.Trim());
+            MatchClass s = new MatchClass(GameTypelbl.Text, HomeTeamlbl.Text, HomeScorelbl.Text, AwayTeamlbl.Text, AwayScorelbl.Text, MatchNamelbl.Text.Trim());
             tennisList.Add(s);
             MatchClass.SaveMatchDataToFile(tennisList);
 
@@ -238,7 +238,7 @@ namespace ScoreTracker
                 //set image source to mute
                 var assembly = typeof(Tennis);
                 string soundOption = "ScoreTracker.Assets.Images.mutelight.png";
-                imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+                ImgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to false
                 soundOn = false;
             }
@@ -248,7 +248,7 @@ namespace ScoreTracker
                 //set image source to sound on icon
                 var assembly = typeof(Tennis);
                 string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
-                imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+                ImgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //set sound option equal to true
                 soundOn = true;
             }
@@ -257,8 +257,8 @@ namespace ScoreTracker
         //Method to reset scores
         private void ImgReset_Tapped(object sender, EventArgs e)
         {
-            homeScore.Text = "0";
-            awayScore.Text = "0";
+            HomeScorelbl.Text = "0";
+            AwayScorelbl.Text = "0";
         }
     }
 }

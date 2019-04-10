@@ -5,7 +5,7 @@
 
     <Grid BackgroundColor="LightBlue">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.75*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.5*"/>
@@ -22,35 +22,35 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8" Aspect="AspectFill"/>
+        <Image x:Name="ImgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8" Aspect="AspectFill"/>
 
-        <Image x:Name="imgSound" Grid.Row="0" Grid.Column="4">
+        <Image x:Name="ImgSound" Grid.Row="0" Grid.Column="4">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSound_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
 
-        <Image x:Name="imgReset" Grid.Row="0" Grid.Column="0">
+        <Image x:Name="ImgReset" Grid.Row="0" Grid.Column="0">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgReset_Tapped" NumberOfTapsRequired="2"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
 
-        <Label x:Name="gameType" Text="Ice Hockey" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
-        <Label x:Name="homeTeam" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="GameTypelbl" Text="Ice Hockey" FontSize="50" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label x:Name="HomeTeamlbl" Text="Home" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
         <Label Text="-" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
-        <Label x:Name="awayTeam" Text="Away" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
+        <Label x:Name="AwayTeamlbl" Text="Away" FontSize="Large" TextColor="Black" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
         <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black">
-            <Label x:Name="homeScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+            <Label x:Name="HomeScorelbl" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
         <Frame Grid.Row="2" Grid.Column="3" BorderColor="Black">
-            <Label x:Name="awayScore" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+            <Label x:Name="AwayScorelbl" Text="0" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
         </Frame>
 
         <Button x:Name="AddHome" Text="+" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="35" Grid.Column="1" WidthRequest="75" Clicked="AddHome_Clicked"/>
         <Button x:Name="AddAway" Text="+" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="3" FontSize="35" Grid.Column="3" WidthRequest="75" Clicked="AddAway_Clicked"/>
 
-        <Entry x:Name="matchName" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"></Entry>
+        <Entry x:Name="MatchNamelbl" Placeholder="Match Name" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"></Entry>
         <Button x:Name="SaveGame" Text="Save Game" BackgroundColor="LightGray" HorizontalOptions="Center" Grid.Row="6" Grid.Column="2" Clicked="SaveGame_Clicked"/>
     </Grid>
 </ContentPage>

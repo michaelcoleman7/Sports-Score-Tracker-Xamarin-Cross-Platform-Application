@@ -36,11 +36,11 @@ namespace ScoreTracker
             var assembly = typeof(Basketball);
             //Set default image source for sound icon (default is on)
             string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
-            imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+            ImgSound.Source = ImageSource.FromResource(soundOption, assembly);
 
             //Set reset image source
             string ResetImage = "ScoreTracker.Assets.Images.reset.png";
-            imgReset.Source = ImageSource.FromResource(ResetImage, assembly);
+            ImgReset.Source = ImageSource.FromResource(ResetImage, assembly);
 
             // Choose between platform/build options for each device
             switch (Device.RuntimePlatform)
@@ -49,16 +49,16 @@ namespace ScoreTracker
                 case Device.Android:
                     //setup background image for android
                     string androidBackground = "ScoreTracker.Assets.Images.basketballcourt.jpg";
-                    imgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(androidBackground, assembly);
                     break;
                 case Device.UWP:
                     //setup background image for UWP
                     string uwpBackground = "ScoreTracker.Assets.Images.Basketballuwp.jpg";
-                    imgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
+                    ImgBackground.Source = ImageSource.FromResource(uwpBackground, assembly);
                     //setup text colors for page elements for UWP
-                    gameType.TextColor = Color.White;
-                    homeScore.TextColor = Color.White;
-                    awayScore.TextColor = Color.White;
+                    GameTypelbl.TextColor = Color.White;
+                    HomeScorelbl.TextColor = Color.White;
+                    AwayScorelbl.TextColor = Color.White;
                     break;
                 default:
                     break;
@@ -69,67 +69,67 @@ namespace ScoreTracker
         private void AddHome1Point_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 2, then set to text property
-            string score = homeScore.Text.ToString();
+            string score = HomeScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 1;
-            homeScore.Text = addscore.ToString();
+            HomeScorelbl.Text = addscore.ToString();
         }
 
         //Method to add a 2 pointer to the home team score
         private void AddHome2Points_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 2, then set to text property
-            string score = homeScore.Text.ToString();
+            string score = HomeScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 2;
-            homeScore.Text = addscore.ToString();
+            HomeScorelbl.Text = addscore.ToString();
         }
 
         //Method to add a 3 pointer to the home team score
         private void AddHome3Points_Clicked(object sender, EventArgs e)
         {
             //Change homescore text to string then convert to an integer - add 3, then set to text property
-            string score = homeScore.Text.ToString();
+            string score = HomeScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 3;
-            homeScore.Text = addscore.ToString();
+            HomeScorelbl.Text = addscore.ToString();
         }
 
         //Method to add a 1 point to the away team score
         private void AddAway1Point_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 2, then set to text property
-            string score = awayScore.Text.ToString();
+            string score = AwayScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 1;
-            awayScore.Text = addscore.ToString();
+            AwayScorelbl.Text = addscore.ToString();
         }
 
         //Method to add a 2 pointer to the away team score
         private void AddAway2Points_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 2, then set to text property
-            string score = awayScore.Text.ToString();
+            string score = AwayScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 2;
-            awayScore.Text = addscore.ToString();
+            AwayScorelbl.Text = addscore.ToString();
         }
 
         //Method to add a 3 pointer to the home team score
         private void AddAway3Points_Clicked(object sender, EventArgs e)
         {
             //Change awayscore text to string then convert to an integer - add 3, then set to text property
-            string score = awayScore.Text.ToString();
+            string score = AwayScorelbl.Text.ToString();
             int addscore = Convert.ToInt32(score);
             addscore = addscore + 3;
-            awayScore.Text = addscore.ToString();
+            AwayScorelbl.Text = addscore.ToString();
         }
 
         //Method to save game and ensure requirements are met in order to save
         private async void SaveGame_Clicked(object sender, EventArgs e)
         {
             //If match name is left empty by user
-            if (matchName.Text == null || matchName.Text.Trim() == "")
+            if (MatchNamelbl.Text == null || MatchNamelbl.Text.Trim() == "")
             {
                 //Alert user they must enter a match name - referenced - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/pop-ups
                 await DisplayAlert("Save Requirement", "Match Name cannot be empty", "OK");
@@ -156,7 +156,7 @@ namespace ScoreTracker
                     foreach (var mc in existingList)
                     {
                         //If match name is found
-                        if (mc.MatchName == matchName.Text.Trim())
+                        if (mc.MatchName == MatchNamelbl.Text.Trim())
                         {
                             matchExists = true;
                         }
@@ -181,7 +181,7 @@ namespace ScoreTracker
         private async void SaveandReturn()
         {
             //Create new match class and add to basketballList
-            MatchClass s = new MatchClass(gameType.Text, homeTeam.Text, homeScore.Text, awayTeam.Text, awayScore.Text, matchName.Text.Trim());
+            MatchClass s = new MatchClass(GameTypelbl.Text, HomeTeamlbl.Text, HomeScorelbl.Text, AwayTeamlbl.Text, AwayScorelbl.Text, MatchNamelbl.Text.Trim());
             basketballList.Add(s);
             MatchClass.SaveMatchDataToFile(basketballList);
 
@@ -208,7 +208,7 @@ namespace ScoreTracker
                 //Set image source to mute
                 var assembly = typeof(Basketball);
                 string soundOption = "ScoreTracker.Assets.Images.mutelight.png";
-                imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+                ImgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //Set sound option equal to false
                 soundOn = false;
             }
@@ -218,7 +218,7 @@ namespace ScoreTracker
                 //Set image source to sound on icon
                 var assembly = typeof(Basketball);
                 string soundOption = "ScoreTracker.Assets.Images.soundonlight.png";
-                imgSound.Source = ImageSource.FromResource(soundOption, assembly);
+                ImgSound.Source = ImageSource.FromResource(soundOption, assembly);
                 //Set sound option equal to true
                 soundOn = true;
             }
@@ -227,8 +227,8 @@ namespace ScoreTracker
         //Method to reset scores
         private void ImgReset_Tapped(object sender, EventArgs e)
         {
-            homeScore.Text = "0";
-            awayScore.Text = "0";
+            HomeScorelbl.Text = "0";
+            AwayScorelbl.Text = "0";
         }
     }
 }

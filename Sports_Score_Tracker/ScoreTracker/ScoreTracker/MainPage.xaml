@@ -20,35 +20,35 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="imgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="5" Aspect="AspectFill"/>
+        <Image x:Name="ImgBackground" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="5" Aspect="AspectFill"/>
 
-        <Label x:Name="header" Text="Sports Score Tracker" LineBreakMode="TailTruncation" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
-        <Image x:Name="imgSoccer" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="1">
+        <Label x:Name="Header" Text="Sports Score Tracker" LineBreakMode="TailTruncation" FontSize="60" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Image x:Name="ImgSoccer" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgSoccer_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Image x:Name="imgBasketball" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="3">
+        <Image x:Name="ImgBasketball" HeightRequest="50" WidthRequest="50" Grid.Row="1" Grid.Column="3">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgBasketball_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Image x:Name="imgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1">
+        <Image x:Name="ImgTennis" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgTennis_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Image x:Name="imgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3">
+        <Image x:Name="ImgHockey" HeightRequest="50" WidthRequest="50" Grid.Row="2" Grid.Column="3">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgHockey_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Image x:Name="imgGaa" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="1">
+        <Image x:Name="ImgGaa" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="1">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgGAA_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
-        <Image x:Name="imgRugby" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="3">
+        <Image x:Name="ImgRugby" HeightRequest="50" WidthRequest="50" Grid.Row="3" Grid.Column="3">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImgRugby_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
             </Image.GestureRecognizers>
