@@ -35,3 +35,6 @@ Visual Studio 2017
 - When the user enters an acceptable name(non duplicate) then the game is written to a file, game names are trimmed to prevent white space from causing confusion for the user as to why a game may not be deleting etc... Saving games is carried out by converting items in the saved games list to a JSON object and writing to file.
 - The Load games page is used to display the list of saved games by reading from the text file and deserializing the JSON, which is then displayed in a listview. when an item is selected from the listview, it's information is populated into the entry elements on the page to allow the user to update the game information (achieved through data binding) and save or they can delete the selected item. Both are done by looping through the list and either updating to the elements text or removing them from the list. Then refreshing the listview for the user
 - The INotifyPropertyChanged element is also used in order to show the user the changes they are making to the game in real time on the list view
+
+
+Note: Sometimes upon first build on android, background image doesn't fully cover background, but works fine when navigating from and returning back to mainpage, also works fine when loading build when application already built to phone. (Assuming it's a bug with building, researched and couldn't find solution to issue)
