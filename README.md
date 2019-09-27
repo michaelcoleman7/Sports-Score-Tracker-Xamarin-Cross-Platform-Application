@@ -37,4 +37,4 @@ Visual Studio 2017
 - The INotifyPropertyChanged element is also used in order to show the user the changes they are making to the game in real time on the list view
 
 
-Note: Sometimes upon first build on android, background image doesn't fully cover background, but works fine when navigating from and returning back to mainpage, also works fine when loading build when application already built to phone. (Assuming it's a bug with building, researched and couldn't find solution to issue)
+Note: Sometimes upon first build on android, background image doesn't fully cover background, but works fine when navigating from and returning back to mainpage, also works fine when loading build when application already built to phone. (Assuming it's a bug with building, researched and couldn't find solution to issue) Note: Does not have IOS implementation.
